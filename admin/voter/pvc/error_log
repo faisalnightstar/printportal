@@ -1,0 +1,2 @@
+[16-Apr-2022 01:19:03 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'akaadhar_db'@'localhost' (using password: YES) in /home/tepbzfak/public_html/admin/voter/config.php on line 17
+[02-Nov-2022 03:50:09 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'tepbzfak_pk'@'localhost' (using password: YES) in /home2/mybestpr/public_html/admin/voter/pvc/config.php on line 17

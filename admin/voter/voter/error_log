@@ -1,0 +1,1 @@
+[02-Nov-2022 03:50:42 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home2/mybestpr/public_html/admin/voter/voter/voterassam.php on line 17
