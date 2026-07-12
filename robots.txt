@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin
+Allow: /
+
+
+
+
+
+Sitemap: https://printportals.xyz/sitemap.xml
