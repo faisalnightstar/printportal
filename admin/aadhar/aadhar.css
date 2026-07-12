@@ -1,0 +1,455 @@
+.clearfix:after { content: "";display: table; clear: both;}
+
+a {color: #001028;text-decoration: none;}
+
+
+
+body { font-family: 'roboto', sans-serif; position: relative;width:810px;  height:986px;  margin: 0px; color: #001028;background: #FFFFFF; font-size: 18px; margin-top:10px;margin-left:10px;margin-right:10px;}
+
+
+
+	* { text-align:left;}
+
+#logo{ float: left ;}
+
+table th,
+
+table td { font-size: 11px;
+
+    padding-top: 0;
+
+    vertical-align: top;}
+
+table th { padding: 5px 20px;border-bottom: 1px solid #C1CED9;white-space: nowrap; font-weight: bold; font-family: oswald ; font-size: 26px;}
+
+
+
+.date_block strong{display:inline-block; width:170px;}
+
+.address td{margin-top:25px; border:1px solid #C1CED9; padding:5px;}
+
+.address_detail td{border:1px solid #C1CED9; padding:5px;}
+
+.detail{ border:1px solid #C1CED9}
+
+.detail th{border:1px solid #C1CED9;}
+
+.detail td{border:1px solid #C1CED9; padding:5px;}
+
+
+
+	
+
+.firsttr {
+
+    text-align: left;
+
+    padding-left: 63px;
+
+    padding-top: 252px;
+
+    font-size: 13px;
+
+    line-height: 13px;
+
+}
+
+.normaltr {
+
+    text-align: left;
+
+    padding-left: 65px;
+
+    font-size: 13px;
+
+	line-height: 13px;
+
+}
+
+ .firstqr{
+
+    padding-top: 97px;
+
+    padding-left: 227px;
+
+    text-align: left;
+
+}
+
+.aimage{
+
+    padding-top: 57px;
+
+    text-align: left;
+
+    padding-left: 19px;
+
+	font-size:14px;
+
+	    width: 75px;
+
+   
+
+}
+
+.btmname{
+
+    margin-top: 67px;
+
+    text-align: left;
+
+    font-size: 14px;
+
+	
+
+}
+
+.aimage img {
+
+    float: left; width: 75px;
+
+}
+
+
+
+.addharno{
+
+    padding-top: 29px;
+
+    text-align: left;
+
+    padding-left: 103px;
+
+    font-weight: 100;
+
+    font-size: 26px;
+
+}
+
+.btnqr {
+
+    text-align: left;
+
+    padding-top: 5px;
+
+    padding-left: 304px;
+
+}
+
+.addharnobtn{
+
+    margin-top: -65px;
+
+    float: left;
+
+}
+
+.rightcontent{
+
+    float: left;
+
+    font-size: 12px;
+
+    width: 325px;
+
+    margin-left: 337px;
+
+    margin-top: -198px;
+
+    text-align: left;
+
+}
+
+.rightcontent .firstttr {float: left;margin-left: 44px;}
+
+.rightcontent .sectr {margin-top: 28px;float: left;margin-left: -19px;}
+
+.rightcontent .thirdtr {margin-top: 63px;margin-left: 29px;float: left;}
+
+td.lastqr {
+
+    text-align: right;
+
+    float: right;
+
+    margin-top: -164px;
+
+    margin-right: -55px;
+
+    overflow: visible;
+
+}
+
+.lefttable{
+
+    padding-top: 55px;
+
+    padding-left: 18px;
+
+	    text-align: left;
+
+}
+
+.widthimg{
+
+    width: 47px;
+
+}
+
+.righttable {
+
+    font-size: 12px;
+
+    padding-top: 26px;
+
+    text-align: left;
+
+}
+
+.hindinameset{
+
+    text-align: left;
+
+    padding-left: 26px;
+
+}
+
+table.upperpart {
+
+    position: absolute;
+    top: 374px;
+    left: 80px;
+    font-weight: 400;
+    width: 175px;
+
+}
+
+@media print
+
+{
+
+    * {-webkit-print-color-adjust:exact;}
+
+}
+
+@page { size: auto;  margin: 0mm; }
+
+@media print {
+
+    a[href]:after {
+
+        content: none !important;
+
+    }
+
+}
+
+@media print {
+
+.header, .hide { visibility: hidden }
+
+}
+
+ .bpart {
+    /* padding-top: 48px; */
+    /* padding-left: 20px; */
+    position: absolute;
+    bottom: 129px;
+    width: 703px;
+    top: 776px;
+    left: 45px;
+}
+
+.btopsec {
+            padding-left: 0px;
+    padding-top: 55px;
+    position: relative;
+    top: -22px;
+    left: 24px;
+    width: 231px;
+}
+
+.btopthird {
+    text-align: center;
+    padding-top: 19px;
+    padding-left: 0px;
+}
+.bpartone{padding-left:9px;}
+
+span.dob {
+
+    padding-left: 0px;
+
+}
+
+.cpartfirst{
+
+    width: 212px;
+
+    text-align: center;
+
+    padding-left: 75px;
+
+    font-size: 21px;
+
+    padding-top: 8px;
+
+}
+
+.cpartthird{
+
+    width: 280px;
+
+    text-align: center;
+
+    padding-left: 102px;
+
+    font-size: 21px;
+
+    padding-top: 8px;
+
+}
+
+.mrmin {
+
+    margin-top: -70px;
+
+    float: right;
+
+    margin-left: 7px;
+
+}
+
+.paddingbtm{
+
+    padding-bottom: 72px;
+
+}
+
+span.addharnopan {
+
+    float: left;
+
+    width: 100%;
+
+    margin-top: -25px;
+
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+span.maxheight {
+
+        height: auto;
+    float: left;
+    width: 200px;
+    overflow: hidden;
+    min-height: 30px;
+
+}
+
+td.paddingbtm.insiderelative {
+
+    position: relative;
+
+}
+
+img.mrmin.mrnin2 {
+    position: absolute;
+    top: -90px;
+    margin: 0px;
+    width: 90px;
+    height: 90px;
+    right: -84px;
+}
+
+span.addharnopan.addharnopan2 {
+
+    /* display: block; */
+
+    /* margin: 0 auto; */
+
+    margin-left: 103px;
+    margin-top: -10px;
+}
+
+span.addharnopan.addharnopan1 {
+
+    margin-top: -25px;
+    
+}
+
+table.bpart-bottom {
+
+    position: absolute;
+
+   bottom: -28px;
+
+}
+
+
+
+p.upperaddhar {
+
+    top: 529px;
+
+    position: absolute;
+
+    left: 120px;
+
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+
+
+p.download-date {
+
+   transform: rotate(90deg);
+    position: absolute;
+    font-size: 9px;
+    top: 417px;
+    font-weight: 400;
+    left: 10px;
+
+}
+
+
+div.qr-photo-text {
+
+        transform: rotate(90deg);
+    position: absolute;
+    font-size: 8px;
+    bottom: 96px;
+    font-weight: 600;
+    left: 691px;
+    width: 200px;
+
+}
+
+
+
+img.mrmin.mrninbig {
+
+        top: 593px;
+    position: absolute;
+    left: 222px;
+    width: 144px;
+
+}
+
+.btopthird img {
+   width: 133px;
+    height: 130px;
+    position: relative;
+    left: -8px;
+    top: -2px;
+}
+
+.enroll {
+    position: absolute;
+    top: 348px;
+    left: 253px;
+    font-size: 14px;
+    font-weight: 600;
+}
