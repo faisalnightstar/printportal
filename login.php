@@ -34,8 +34,8 @@ if (file_exists("config.php")) {
                 
                 $msg = 'Login Successful! Redirecting...';
                 
-                // Smart redirect based on usertype
-                $redirect_url = (strtolower($b['usertype']) == 'admin') ? 'admin/panel.php' : 'dashboard/dashboard.php';
+                // Smart redirect to admin/panel.php dashboard
+                $redirect_url = 'admin/panel.php';
                 
                 echo "<script>
                     setTimeout(function () {
