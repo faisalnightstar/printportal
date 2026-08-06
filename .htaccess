@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Route API payment endpoints
+RewriteRule ^api/payment/generate-qr/?$ api/payment/generate-qr.php [L,QSA]
+RewriteRule ^api/payment/verify-status/?$ api/payment/verify-status.php [L,QSA]
+
+# Fallback route /dashboard/*.php to /admin/*.php if file does not exist in /dashboard/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^dashboard/(.*)$ admin/$1 [L,QSA]
+
+</IfModule>
