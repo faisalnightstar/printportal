@@ -43,10 +43,13 @@
     <!-- Google Analytics (Retained your original tag) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1SGP78CL5"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P1SGP78CL5');
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-P1SGP78CL5');
     </script>
 
     <!-- Google AdSense -->
@@ -57,40 +60,42 @@
     <!-- Tailwind CSS (CDN for modern styling without external local assets) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0f172a', /* Slate 900 */
-                            light: '#3b82f6', /* Blue 500 */
-                            accent: '#10b981' /* Emerald 500 */
-                        }
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                },
+                colors: {
+                    brand: {
+                        dark: '#5D3140',
+                        /* Slate 900 */
+                        light: '#F39399',
+                        /* Blue 500 */
+                        accent: '#CF4173' /* Emerald 500 */
                     }
                 }
             }
         }
+    }
     </script>
 
     <!-- Structured Data (JSON-LD) for Local SEO -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Print Portals",
-      "image": "https://printportals.xyz/images/logo.png",
-      "@id": "https://printportals.xyz/",
-      "url": "https://printportals.xyz/",
-      "description": "Digital printing portal offering instant PVC printing for Aadhaar, Voter ID, PAN Card, Ayushman Card, and Driving Licenses across India.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "IN"
-      },
-      "areaServed": "India",
-      "priceRange": "$₹"
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Print Portals",
+        "image": "https://printportals.xyz/images/logo.png",
+        "@id": "https://printportals.xyz/",
+        "url": "https://printportals.xyz/",
+        "description": "Digital printing portal offering instant PVC printing for Aadhaar, Voter ID, PAN Card, Ayushman Card, and Driving Licenses across India.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN"
+        },
+        "areaServed": "India",
+        "priceRange": "$₹"
     }
     </script>
 </head>
@@ -173,47 +178,45 @@
     </div>
 
     <!-- Hero Section -->
-    <div class="bg-brand-dark text-white py-16 lg:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="text-center absolute left-0 right-0 mx-auto">
-                <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-                    Streamline Your Business with <span class="text-brand-accent">Print Portals</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-                    The ultimate platform for CSC VLEs and retailers. Instantly print Aadhaar, Voter IDs, PAN cards,
-                    Ayushman cards, and more with our fast, secure, and highly reliable digital portal.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="/register.php"
-                        class="bg-brand-accent text-white hover:bg-emerald-400 font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1 text-center">Create
-                        Free Account</a>
-                    <a href="/login.php"
-                        class="bg-transparent border-2 border-white hover:bg-white hover:text-brand-dark text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all text-center">Login
-                        to Portal</a>
-                </div>
-            </div>
-            <div class="hidden relative">
-                <!-- Using a highly professional placeholder SVG illustration instead of missing local image -->
+    <div class="relative bg-brand-dark text-white py-20 lg:py-32 overflow-hidden">
 
-                <svg class="w-full max-w-md opacity-90" viewBox="0 0 500 400" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <rect x="50" y="80" width="400" height="260" rx="12" fill="#3b82f6" stroke="#10b981"
-                        stroke-width="4" />
-                    <rect x="70" y="120" width="120" height="150" rx="8" fill="#ffffff" fill-opacity="0.2" />
-                    <circle cx="130" cy="160" r="30" fill="#10b981" />
-                    <rect x="90" y="210" width="80" height="8" rx="4" fill="#ffffff" />
-                    <rect x="90" y="230" width="60" height="8" rx="4" fill="#ffffff" />
-                    <rect x="220" y="120" width="200" height="20" rx="4" fill="#ffffff" fill-opacity="0.8" />
-                    <rect x="220" y="160" width="160" height="12" rx="4" fill="#ffffff" fill-opacity="0.5" />
-                    <rect x="220" y="190" width="180" height="12" rx="4" fill="#ffffff" fill-opacity="0.5" />
-                    <path d="M350 280 L420 280 L420 340 L350 340 Z" fill="#10b981" />
-                    <circle cx="430" cy="360" r="40" fill="#0f172a" stroke="#10b981" stroke-width="4" />
-                    <path d="M415 360 L425 370 L445 350" stroke="#10b981" stroke-width="4" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
+        <!-- Background Image Layer -->
+        <div class="absolute inset-0 z-0">
+            <!-- The actual image stretched to cover the area -->
+            <img class="w-full h-full object-cover" src="./images/hero_section.png" alt="Hero Background">
+            <!-- Dark overlay to ensure white text meets accessibility contrast standards -->
+            <div class="absolute inset-0 bg-brand-dark/70 mix-blend-multiply"></div>
+        </div>
+
+        <!-- Foreground Content Layer: z-10 lifts it safely above the background image -->
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <!-- Hero Text Content -->
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 max-w-3xl mx-auto">
+                Streamline Your Business with <span class="text-brand-accent">Print Portals</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+                The ultimate platform for CSC VLEs and retailers. Instantly print Aadhaar, Voter IDs, PAN cards,
+                Ayushman cards, and more with our fast, secure, and highly reliable digital portal.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/register.php"
+                    class="w-full sm:w-auto bg-brand-accent text-white hover:bg-emerald-400 font-bold py-3.5 px-8 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1 text-center">
+                    Create Free Account
+                </a>
+                <a href="/login.php"
+                    class="w-full sm:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-brand-dark text-white font-bold py-3.5 px-8 rounded-lg shadow-lg transition-all text-center">
+                    Login to Portal
+                </a>
             </div>
+
         </div>
     </div>
+
+
 
     <!-- Services Section -->
     <div class="py-16 bg-gray-50 flex-grow">
@@ -336,7 +339,9 @@
             </div>
             <div class="mt-8 text-center text-gray-500 text-sm">
                 <p>&copy;
-                    <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.
+                    <script>
+                    document.write(new Date().getFullYear())
+                    </script> Print Portals. All Rights Reserved.
                 </p>
                 <p class="mt-2 text-xs">This platform operates independently to provide formatting and printing software
                     tools for retailers. Use responsibly and in accordance with local regulations.</p>
@@ -408,15 +413,15 @@
     </div>
 
     <script>
-        const chatWindow = document.getElementById('chat-window');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput = document.getElementById('chat-input');
+    const chatWindow = document.getElementById('chat-window');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
 
-        let isChatOpen = false;
-        let chatHistory = [];
+    let isChatOpen = false;
+    let chatHistory = [];
 
-        // System Instruction defines the AI's persona and knowledge boundaries
-        const systemInstruction = `You are the AI Assistant for 'Print Portals', a website designed for CSC VLEs and retailers in India to quickly format and print PVC cards.
+    // System Instruction defines the AI's persona and knowledge boundaries
+    const systemInstruction = `You are the AI Assistant for 'Print Portals', a website designed for CSC VLEs and retailers in India to quickly format and print PVC cards.
         Your job is to assist users with questions about printing Aadhaar cards, Voter IDs, PAN cards, Ayushman cards, and Driving Licenses.
         Rules:
         1. Keep answers concise, professional, and directly helpful.
@@ -425,57 +430,57 @@
         4. If they ask about pricing, tell them to register or login to view the retailer wallet pricing.
         5. Be polite and use formatting (bolding, bullet points) to make instructions easy to read.`;
 
-        function toggleChat() {
-            isChatOpen = !isChatOpen;
-            if (isChatOpen) {
-                chatWindow.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
-                chatWindow.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
-                chatInput.focus();
-            } else {
-                chatWindow.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
-                chatWindow.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
-            }
+    function toggleChat() {
+        isChatOpen = !isChatOpen;
+        if (isChatOpen) {
+            chatWindow.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+            chatWindow.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
+            chatInput.focus();
+        } else {
+            chatWindow.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
+            chatWindow.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
         }
+    }
 
-        function handleKeyPress(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
         }
+    }
 
-        function scrollToBottom() {
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+    function scrollToBottom() {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
 
-        function addMessageToUI(sender, text) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = `flex items-start gap-2 max-w-[85%] ${sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`;
+    function addMessageToUI(sender, text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `flex items-start gap-2 max-w-[85%] ${sender === 'user' ? 'ml-auto flex-row-reverse' : ''}`;
 
-            // Format text (basic markdown for bold)
-            const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // Format text (basic markdown for bold)
+        const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-            const avatar = sender === 'user'
-                ? `<div class="w-8 h-8 rounded-full bg-brand-light flex-shrink-0 flex items-center justify-center text-white font-bold text-xs">U</div>`
-                : `<div class="w-8 h-8 rounded-full bg-brand-dark flex-shrink-0 flex items-center justify-center text-white font-bold text-xs">AI</div>`;
+        const avatar = sender === 'user' ?
+            `<div class="w-8 h-8 rounded-full bg-brand-light flex-shrink-0 flex items-center justify-center text-white font-bold text-xs">U</div>` :
+            `<div class="w-8 h-8 rounded-full bg-brand-dark flex-shrink-0 flex items-center justify-center text-white font-bold text-xs">AI</div>`;
 
-            const bubbleClasses = sender === 'user'
-                ? `bg-brand-light text-white p-3 rounded-2xl rounded-tr-none shadow-sm`
-                : `bg-white border border-gray-200 text-gray-800 p-3 rounded-2xl rounded-tl-none shadow-sm`;
+        const bubbleClasses = sender === 'user' ?
+            `bg-brand-light text-white p-3 rounded-2xl rounded-tr-none shadow-sm` :
+            `bg-white border border-gray-200 text-gray-800 p-3 rounded-2xl rounded-tl-none shadow-sm`;
 
-            msgDiv.innerHTML = `
+        msgDiv.innerHTML = `
                 ${avatar}
                 <div class="${bubbleClasses}">${formattedText}</div>
             `;
 
-            chatMessages.appendChild(msgDiv);
-            scrollToBottom();
-        }
+        chatMessages.appendChild(msgDiv);
+        scrollToBottom();
+    }
 
-        function showTypingIndicator() {
-            const msgDiv = document.createElement('div');
-            msgDiv.id = 'typing-indicator';
-            msgDiv.className = `flex items-start gap-2 max-w-[85%]`;
-            msgDiv.innerHTML = `
+    function showTypingIndicator() {
+        const msgDiv = document.createElement('div');
+        msgDiv.id = 'typing-indicator';
+        msgDiv.className = `flex items-start gap-2 max-w-[85%]`;
+        msgDiv.innerHTML = `
                 <div class="w-8 h-8 rounded-full bg-brand-dark flex-shrink-0 flex items-center justify-center text-white font-bold text-xs">AI</div>
                 <div class="bg-white border border-gray-200 text-gray-800 py-4 px-5 rounded-2xl rounded-tl-none shadow-sm flex gap-1 items-center">
                     <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0ms"></div>
@@ -483,88 +488,107 @@
                     <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 300ms"></div>
                 </div>
             `;
-            chatMessages.appendChild(msgDiv);
-            scrollToBottom();
-        }
+        chatMessages.appendChild(msgDiv);
+        scrollToBottom();
+    }
 
-        function removeTypingIndicator() {
-            const indicator = document.getElementById('typing-indicator');
-            if (indicator) {
-                indicator.remove();
+    function removeTypingIndicator() {
+        const indicator = document.getElementById('typing-indicator');
+        if (indicator) {
+            indicator.remove();
+        }
+    }
+
+    async function sendMessage() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        // Update UI
+        addMessageToUI('user', text);
+        chatInput.value = '';
+        showTypingIndicator();
+
+        // Prepare history for API
+        const contents = chatHistory.map(msg => ({
+            role: msg.role === 'bot' ? 'model' : 'user',
+            parts: [{
+                text: msg.text
+            }]
+        }));
+        contents.push({
+            role: 'user',
+            parts: [{
+                text: text
+            }]
+        });
+
+        const apiKey = ""; // Canvas handles API key injection
+        const apiUrl =
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+        const payload = {
+            contents: contents,
+            systemInstruction: {
+                parts: [{
+                    text: systemInstruction
+                }]
             }
-        }
+        };
 
-        async function sendMessage() {
-            const text = chatInput.value.trim();
-            if (!text) return;
+        try {
+            // Implement exponential backoff for robustness
+            let response;
+            let retries = 3;
+            let delay = 1000;
 
-            // Update UI
-            addMessageToUI('user', text);
-            chatInput.value = '';
-            showTypingIndicator();
+            while (retries > 0) {
+                response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
 
-            // Prepare history for API
-            const contents = chatHistory.map(msg => ({
-                role: msg.role === 'bot' ? 'model' : 'user',
-                parts: [{ text: msg.text }]
-            }));
-            contents.push({ role: 'user', parts: [{ text: text }] });
-
-            const apiKey = ""; // Canvas handles API key injection
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-
-            const payload = {
-                contents: contents,
-                systemInstruction: {
-                    parts: [{ text: systemInstruction }]
-                }
-            };
-
-            try {
-                // Implement exponential backoff for robustness
-                let response;
-                let retries = 3;
-                let delay = 1000;
-
-                while (retries > 0) {
-                    response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (response.ok) break;
-                    if (response.status === 429) {
-                        retries--;
-                        await new Promise(res => setTimeout(res, delay));
-                        delay *= 2;
-                    } else {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                }
-
-                if (!response || !response.ok) throw new Error("Failed to fetch after retries");
-
-                const data = await response.json();
-                const botReply = data.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                if (botReply) {
-                    removeTypingIndicator();
-                    addMessageToUI('bot', botReply);
-
-                    // Save to history
-                    chatHistory.push({ role: 'user', text: text });
-                    chatHistory.push({ role: 'bot', text: botReply });
+                if (response.ok) break;
+                if (response.status === 429) {
+                    retries--;
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2;
                 } else {
-                    throw new Error("Unexpected API response structure");
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
-
-            } catch (error) {
-                console.error("Gemini API Error:", error);
-                removeTypingIndicator();
-                addMessageToUI('bot', "I'm having trouble connecting to my servers right now. Please try again in a moment.");
             }
+
+            if (!response || !response.ok) throw new Error("Failed to fetch after retries");
+
+            const data = await response.json();
+            const botReply = data.candidates?. [0]?.content?.parts?. [0]?.text;
+
+            if (botReply) {
+                removeTypingIndicator();
+                addMessageToUI('bot', botReply);
+
+                // Save to history
+                chatHistory.push({
+                    role: 'user',
+                    text: text
+                });
+                chatHistory.push({
+                    role: 'bot',
+                    text: botReply
+                });
+            } else {
+                throw new Error("Unexpected API response structure");
+            }
+
+        } catch (error) {
+            console.error("Gemini API Error:", error);
+            removeTypingIndicator();
+            addMessageToUI('bot',
+                "I'm having trouble connecting to my servers right now. Please try again in a moment.");
         }
+    }
     </script>
 </body>
 
