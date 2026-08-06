@@ -1,0 +1,59 @@
+[15-Feb-2021 05:46:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[15-Feb-2021 05:46:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mysqli_connect() in /home4/myravipr/public_html/admin/config.php:17
+Stack trace:
+#0 /home4/myravipr/public_html/admin/voter/voter1.php(1): include()
+#1 {main}
+  thrown in /home4/myravipr/public_html/admin/config.php on line 17
+[22-Mar-2021 13:04:16 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): No such file or directory in /home4/myravipr/public_html/admin/config.php on line 17
+[27-Oct-2022 15:39:36 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'mybestpr_my '@'localhost' (using password: YES) in /home2/mybestpr/public_html/admin/voter1/config.php on line 17
+[27-Oct-2022 16:09:07 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'mybestpr_my '@'localhost' (using password: YES) in /home2/mybestpr/public_html/admin/voter1/config.php on line 17
+[27-Oct-2022 16:29:29 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'mybestpr_my '@'localhost' (using password: YES) in /home2/mybestpr/public_html/admin/voter1/config.php on line 17
