@@ -10,11 +10,11 @@
     <meta name="description" content="Read the Terms and Conditions for using Print Portals. Understand the rules, restrictions, and legal agreements for using our digital document formatting services in India.">
     <meta name="author" content="Print Portals">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://printportals.xyz/Terms.php" />
+    <link rel="canonical" href="https://nprintportal.in/Terms.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://printportals.xyz/Terms.php">
+    <meta property="og:url" content="https://nprintportal.in/Terms.php">
     <meta property="og:title" content="Terms & Conditions | Print Portals">
     <meta property="og:description" content="Read the Terms and Conditions for using Print Portals. Understand the rules for using our digital document formatting services.">
     
@@ -108,7 +108,7 @@
             
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
                 <p class="text-gray-600 mb-8 leading-relaxed font-medium">
-                    Welcome to Print Portals! These terms and conditions outline the rules and regulations for the use of Print Portals's Website, located at <a href="https://printportals.xyz" class="text-brand-light hover:underline">https://printportals.xyz</a>.
+                    Welcome to Print Portals! These terms and conditions outline the rules and regulations for the use of Print Portals's Website, located at <a href="https://nprintportal.in" class="text-brand-light hover:underline">https://nprintportal.in</a>.
                 </p>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     By accessing this website we assume you accept these terms and conditions. Do not continue to use Print Portals if you do not agree to take all of the terms and conditions stated on this page.

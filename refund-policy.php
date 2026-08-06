@@ -10,11 +10,11 @@
     <meta name="description" content="Read the Cancellation and Refund Policy for Print Portals. Understand our terms regarding digital software purchases and account top-ups.">
     <meta name="author" content="Print Portals">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://printportals.xyz/refund-policy.php" />
+    <link rel="canonical" href="https://nprintportal.in/refund-policy.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://printportals.xyz/refund-policy.php">
+    <meta property="og:url" content="https://nprintportal.in/refund-policy.php">
     <meta property="og:title" content="Cancellation & Refund Policy | Print Portals">
     <meta property="og:description" content="Read the Cancellation and Refund Policy for Print Portals. Understand our terms regarding digital purchases.">
     
@@ -121,7 +121,7 @@
                     We want you to have a seamless experience. If you are facing technical difficulties or your printed documents are not formatting correctly, please allow us to try and help solve the problem before assuming the service is faulty.
                 </p>
                 <p class="text-gray-600 mb-8 leading-relaxed">
-                    You can open a ticket in our support desk or contact us directly at <a href="mailto:support@printportals.xyz" class="text-brand-light hover:underline font-medium">support@printportals.xyz</a>. Please allow 24-72 hours for our Support Team to get back to you on your support requests. We do our best to answer much faster to ensure your retail business runs smoothly.
+                    You can open a ticket in our support desk or contact us directly at <a href="mailto:support@nprintportal.in" class="text-brand-light hover:underline font-medium">support@nprintportal.in</a>. Please allow 24-72 hours for our Support Team to get back to you on your support requests. We do our best to answer much faster to ensure your retail business runs smoothly.
                 </p>
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">3. Policy Agreement</h2>

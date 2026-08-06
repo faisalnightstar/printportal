@@ -10,12 +10,12 @@
     <meta name="description" content="Learn about Print Portals, India's leading digital platform for fast and secure document formatting and PVC printing for CSC VLEs and retailers.">
     <meta name="author" content="Print Portals">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <link rel="canonical" href="https://printportals.xyz/abouts.php" />
+    <link rel="canonical" href="https://nprintportal.in/abouts.php" />
     <meta name="google-site-verification" content="hcl-Jqwp1MOp5NPH7w34dDulCYYH3haxX4MmAacpdDs" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://printportals.xyz/abouts.php">
+    <meta property="og:url" content="https://nprintportal.in/abouts.php">
     <meta property="og:title" content="About Us | Print Portals">
     <meta property="og:description" content="Discover how Print Portals empowers CSC VLEs with instant PVC printing solutions for Aadhaar, Voter ID, PAN, and Ayushman cards.">
     

@@ -44,7 +44,7 @@ if (file_exists(__DIR__ . '/userHeader.php')) {
                 <div>
                     <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Account Email</span>
                     <p class="text-xs font-semibold text-slate-800 truncate">
-                        
+
                         <?php echo htmlspecialchars($rw['emailid']); ?></p>
                 </div>
                 <div>
@@ -143,6 +143,29 @@ if (file_exists(__DIR__ . '/userHeader.php')) {
     </div>
 
 </div>
+
+<!-- Tailwind CSS (CDN for modern styling) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+                brand: {
+                    dark: '#0f172a',
+                    /* Slate 900 */
+                    light: '#3b82f6',
+                    /* Blue 500 */
+                    accent: '#10b981' /* Emerald 500 */
+                }
+            }
+        }
+    }
+}
+</script>
 
 <?php
 if (file_exists(__DIR__ . '/upi_recharge_modal.php')) {

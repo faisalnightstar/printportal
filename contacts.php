@@ -10,11 +10,11 @@
     <meta name="description" content="Get in touch with Print Portals. We are here to help CSC VLEs and retailers with fast and secure PVC card printing services in India.">
     <meta name="author" content="Print Portals">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://printportals.xyz/contacts.php" />
+    <link rel="canonical" href="https://nprintportal.in/contacts.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://printportals.xyz/contacts.php">
+    <meta property="og:url" content="https://nprintportal.in/contacts.php">
     <meta property="og:title" content="Contact Us | Print Portals">
     <meta property="og:description" content="Need help with Aadhaar, Voter ID, or PAN card printing? Contact the Print Portals support team today.">
     
@@ -50,7 +50,7 @@
       "@context": "https://schema.org",
       "@type": "ContactPage",
       "name": "Contact Print Portals",
-      "url": "https://printportals.xyz/contacts.php",
+      "url": "https://nprintportal.in/contacts.php",
       "mainEntity": {
         "@type": "Organization",
         "name": "Print Portals",
@@ -58,7 +58,7 @@
           "@type": "ContactPoint",
           "telephone": "+91-9897969594",
           "contactType": "customer service",
-          "email": "support@printportals.xyz",
+          "email": "support@nprintportal.in",
           "areaServed": "IN",
           "availableLanguage": ["English", "Hindi"]
         }
@@ -158,7 +158,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2">Email Address</h3>
                     <p class="text-gray-600 leading-relaxed">
-                        <a href="mailto:support@printportals.xyz" class="hover:text-brand-light transition-colors break-all">support@printportals.xyz</a><br>
+                        <a href="mailto:support@nprintportal.in" class="hover:text-brand-light transition-colors break-all">support@nprintportal.in</a><br>
                         <span class="text-sm text-gray-400">24/7 Online Support</span>
                     </p>
                 </div>

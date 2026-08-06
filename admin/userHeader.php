@@ -101,10 +101,13 @@ $userTypeFull = $fetch['usertype'] ?? '';
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1SGP78CL5"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-P1SGP78CL5');
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-P1SGP78CL5');
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189130708558549"
         crossorigin="anonymous"></script>
@@ -139,125 +142,125 @@ $userTypeFull = $fetch['usertype'] ?? '';
     <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
 
     <style>
-        /* ---- Layout-3: Top Navbar Only, No Sidebar ---- */
-        .navbar-secondary .navbar-nav {
-            flex-wrap: wrap;
-        }
+    /* ---- Layout-3: Top Navbar Only, No Sidebar ---- */
+    .navbar-secondary .navbar-nav {
+        flex-wrap: wrap;
+    }
 
-        .navbar-secondary .nav-item {
-            margin-bottom: 2px;
-        }
+    .navbar-secondary .nav-item {
+        margin-bottom: 2px;
+    }
 
-        .navbar-secondary .dropdown-menu {
-            max-height: 480px;
-            overflow-y: auto;
-            box-shadow: 0 6px 24px rgba(0, 0, 0, .13);
-            border-radius: 10px;
-            border: 1px solid rgba(0, 0, 0, .08);
-            min-width: 220px;
-        }
+    .navbar-secondary .dropdown-menu {
+        max-height: 480px;
+        overflow-y: auto;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, .13);
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, .08);
+        min-width: 220px;
+    }
 
-        .dropdown-menu::-webkit-scrollbar {
-            width: 5px;
-        }
+    .dropdown-menu::-webkit-scrollbar {
+        width: 5px;
+    }
 
-        .dropdown-menu::-webkit-scrollbar-thumb {
-            background: #c1c1c1;
-            border-radius: 10px;
-        }
+    .dropdown-menu::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 10px;
+    }
 
-        .dropdown-title {
-            padding: 8px 20px 4px;
-            font-weight: 700;
-            color: #6777ef;
-            text-transform: uppercase;
-            letter-spacing: .8px;
-            font-size: 10px;
-        }
+    .dropdown-title {
+        padding: 8px 20px 4px;
+        font-weight: 700;
+        color: #6777ef;
+        text-transform: uppercase;
+        letter-spacing: .8px;
+        font-size: 10px;
+    }
 
-        .navbar-secondary .nav-link {
-            font-size: 13px;
-            font-weight: 500;
-        }
+    .navbar-secondary .nav-link {
+        font-size: 13px;
+        font-weight: 500;
+    }
 
-        .navbar-secondary .nav-link .badge {
-            font-size: 9px;
-            vertical-align: middle;
-        }
+    .navbar-secondary .nav-link .badge {
+        font-size: 9px;
+        vertical-align: middle;
+    }
 
-        .main-navbar .navbar-brand img {
-            object-fit: contain;
-        }
+    .main-navbar .navbar-brand img {
+        object-fit: contain;
+    }
 
-        /* Wallet badge pill in top-right */
-        .wallet-pill {
-            background: rgba(40, 167, 69, .1);
-            border: 1px solid rgba(40, 167, 69, .25);
-            border-radius: 20px;
-            padding: 4px 13px;
-            font-weight: 700;
-            font-size: 12px;
-            color: #28a745;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: background .2s;
-        }
+    /* Wallet badge pill in top-right */
+    .wallet-pill {
+        background: rgba(40, 167, 69, .1);
+        border: 1px solid rgba(40, 167, 69, .25);
+        border-radius: 20px;
+        padding: 4px 13px;
+        font-weight: 700;
+        font-size: 12px;
+        color: #28a745;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: background .2s;
+    }
 
-        .wallet-pill:hover {
-            background: rgba(40, 167, 69, .2);
-            color: #1e7e34;
-            text-decoration: none;
-        }
+    .wallet-pill:hover {
+        background: rgba(40, 167, 69, .2);
+        color: #1e7e34;
+        text-decoration: none;
+    }
 
-        /* Active nav item highlight */
-        .navbar-secondary .nav-item.active>.nav-link,
-        .navbar-secondary .nav-link.active {
-            color: #007bff !important;
-            font-weight: 700;
-        }
+    /* Active nav item highlight */
+    .navbar-secondary .nav-item.active>.nav-link,
+    .navbar-secondary .nav-link.active {
+        color: #007bff !important;
+        font-weight: 700;
+    }
 
-        /* Loader */
-        .page-loader-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            z-index: 99999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity .4s;
-        }
+    /* Loader */
+    .page-loader-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity .4s;
+    }
 
-        .loader {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-        }
+    .loader {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+    }
 
-        .loader-inner {
-            display: block;
-            width: 40px;
-            height: 40px;
-            border: 4px solid #6777ef33;
-            border-top-color: #6777ef;
-            border-radius: 50%;
-            animation: spin .8s linear infinite;
-        }
+    .loader-inner {
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 4px solid #6777ef33;
+        border-top-color: #6777ef;
+        border-radius: 50%;
+        animation: spin .8s linear infinite;
+    }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
         }
+    }
 
-        /* Content area top padding compensation for sticky double navbar */
-        .content-wrapper {
-            padding-top: 10px !important;
-        }
+    /* Content area top padding compensation for sticky double navbar */
+    .content-wrapper {
+        padding-top: 10px !important;
+    }
     </style>
 </head>
 
@@ -281,7 +284,7 @@ $userTypeFull = $fetch['usertype'] ?? '';
             <!-- ═══════════════════════════════════════════════════
                  1. PRIMARY NAVBAR — Brand, Search, Quick Actions
                  ═══════════════════════════════════════════════════ -->
-            <nav class="navbar navbar-expand-lg main-navbar sticky-top">
+            <nav class="bg-danger bg-gradient navbar navbar-expand-lg main-navbar sticky-top">
 
                 <!-- Brand -->
                 <a href="panel.php" class="navbar-brand sidebar-gone-hide d-flex align-items-center">
@@ -313,7 +316,7 @@ $userTypeFull = $fetch['usertype'] ?? '';
                 <ul class="navbar-nav navbar-right align-items-center">
 
                     <!-- Live Wallet Balance -->
-                    <li class="nav-item mr-2">
+                    <li class="nav-item mr-2 badge rounded-pill bg-warning font-weight-bold">
                         <a href="findwallet.php" class="wallet-pill">
                             <i class="fas fa-wallet"></i>
                             <span>₹
@@ -325,7 +328,7 @@ $userTypeFull = $fetch['usertype'] ?? '';
                                 }
                                 ?>
                             </span>
-                            <span class="badge badge-success ml-1" style="font-size:9px;">+ Add</span>
+                            <span class="badge badge-dark py-1 px-2 ml-1" style="font-size:9px;">+ Add</span>
                         </a>
                     </li>
 
@@ -440,7 +443,7 @@ $userTypeFull = $fetch['usertype'] ?? '';
             <!-- ═══════════════════════════════════════════════════
                  2. SECONDARY NAVBAR — Full Service Mega-Menu
                  ═══════════════════════════════════════════════════ -->
-            <nav class="navbar navbar-secondary navbar-expand-lg">
+            <nav class="navbar navbar-secondary bg-info navbar-expand-lg">
                 <div class="container-fluid">
                     <ul class="navbar-nav" id="secondaryNavbarNav">
 
@@ -479,41 +482,41 @@ $userTypeFull = $fetch['usertype'] ?? '';
 
                         <!-- Operator / Admin (Role-Based) -->
                         <?php if (in_array($userTypeFull, ['DISTRIBUTER', 'SUPER DISTRIBUTER', 'ADMIN', 'MASTER ADMIN'])) { ?>
-                            <li
-                                class="nav-item dropdown <?php echo in_array($currentPage, ['user.php', 'userlist.php', 'pointtrans.php', 'payment_settings.php']) ? 'active' : ''; ?>">
-                                <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
-                                    <i class="fas fa-user-tie text-primary"></i>
-                                    <span>Operator</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="nav-link" href="user.php">
-                                            <i class="fas fa-user-plus mr-2 text-primary"></i>Add User
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="userlist.php">
-                                            <i class="fas fa-list mr-2"></i>User List
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" href="pointtrans.php">
-                                            <i class="fas fa-rupee-sign mr-2"></i>Point Transfer
-                                        </a>
-                                    </li>
-                                    <?php if (in_array($userTypeFull, ['ADMIN', 'MASTER ADMIN'])) { ?>
-                                        <li>
-                                            <div class="dropdown-divider"></div>
-                                        </li>
-                                        <li class="dropdown-title"><i class="fas fa-cog mr-1"></i>Admin Settings</li>
-                                        <li>
-                                            <a class="nav-link" href="payment_settings.php">
-                                                <i class="fas fa-credit-card mr-2 text-teal"></i>Payment Gateway Config
-                                            </a>
-                                        </li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
+                        <li
+                            class="nav-item dropdown <?php echo in_array($currentPage, ['user.php', 'userlist.php', 'pointtrans.php', 'payment_settings.php']) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fas fa-user-tie text-primary"></i>
+                                <span>Operator</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="nav-link" href="user.php">
+                                        <i class="fas fa-user-plus mr-2 text-primary"></i>Add User
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="userlist.php">
+                                        <i class="fas fa-list mr-2"></i>User List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="pointtrans.php">
+                                        <i class="fas fa-rupee-sign mr-2"></i>Point Transfer
+                                    </a>
+                                </li>
+                                <?php if (in_array($userTypeFull, ['ADMIN', 'MASTER ADMIN'])) { ?>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title"><i class="fas fa-cog mr-1"></i>Admin Settings</li>
+                                <li>
+                                    <a class="nav-link" href="payment_settings.php">
+                                        <i class="fas fa-credit-card mr-2 text-teal"></i>Payment Gateway Config
+                                    </a>
+                                </li>
+                                <?php } ?>
+                            </ul>
+                        </li>
                         <?php } ?>
 
                         <!-- EID to Aadhaar Find -->
@@ -923,7 +926,7 @@ $userTypeFull = $fetch['usertype'] ?? '';
             <!-- ═══════════════════════════════════════════════════
                  CONTENT WRAPPER — Each page body goes here
                  ═══════════════════════════════════════════════════ -->
-            <div class="content-wrapper" style="min-height:85vh; background:#f4f6f9; padding: 20px 24px;">
+            <div style="min-height:85vh; background:#f4f6f9; padding: 20px 24px;">
 
                 <!-- ── Scripts loaded in <head> region ── -->
                 <!-- jQuery (local AdminLTE) -->
@@ -938,31 +941,33 @@ $userTypeFull = $fetch['usertype'] ?? '';
                 <script src="plugins/toastr/toastr.min.js"></script>
 
                 <script>
-                    // Hide page loader on load
-                    window.addEventListener('load', function () {
-                        var loader = document.getElementById('pageLoader');
-                        if (loader) {
-                            loader.style.opacity = '0';
-                            setTimeout(function () { loader.style.display = 'none'; }, 400);
-                        }
-                    });
-
-                    // Chrome Flag copy helper
-                    function copyChromeLink() {
-                        var input = document.getElementById('chromeFlagInput');
-                        if (input) {
-                            input.select();
-                            input.setSelectionRange(0, 99999);
-                            navigator.clipboard.writeText(input.value).catch(function () {
-                                // fallback for older browsers
-                                document.execCommand('copy');
-                            });
-                            alert('Link Copied! Paste it in the Chrome address bar and press Enter.');
-                        }
+                // Hide page loader on load
+                window.addEventListener('load', function() {
+                    var loader = document.getElementById('pageLoader');
+                    if (loader) {
+                        loader.style.opacity = '0';
+                        setTimeout(function() {
+                            loader.style.display = 'none';
+                        }, 400);
                     }
+                });
 
-                    // Bootstrap Tooltip Init
-                    $(function () {
-                        $('[data-toggle="tooltip"]').tooltip();
-                    });
+                // Chrome Flag copy helper
+                function copyChromeLink() {
+                    var input = document.getElementById('chromeFlagInput');
+                    if (input) {
+                        input.select();
+                        input.setSelectionRange(0, 99999);
+                        navigator.clipboard.writeText(input.value).catch(function() {
+                            // fallback for older browsers
+                            document.execCommand('copy');
+                        });
+                        alert('Link Copied! Paste it in the Chrome address bar and press Enter.');
+                    }
+                }
+
+                // Bootstrap Tooltip Init
+                $(function() {
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
                 </script>

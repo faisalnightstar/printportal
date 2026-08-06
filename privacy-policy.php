@@ -10,11 +10,11 @@
     <meta name="description" content="Privacy Policy for Print Portals. Learn how we collect, use, and protect your personal information while you use our digital document formatting services.">
     <meta name="author" content="Print Portals">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://printportals.xyz/privacy-policy.php" />
+    <link rel="canonical" href="https://nprintportal.in/privacy-policy.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://printportals.xyz/privacy-policy.php">
+    <meta property="og:url" content="https://nprintportal.in/privacy-policy.php">
     <meta property="og:title" content="Privacy Policy | Print Portals">
     <meta property="og:description" content="Privacy Policy for Print Portals. Learn how we collect, use, and protect your data.">
     
@@ -108,7 +108,7 @@
             
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    At <strong>Print Portals</strong>, accessible from <a href="https://printportals.xyz" class="text-brand-light hover:underline">https://printportals.xyz</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Print Portals and how we use it.
+                    At <strong>Print Portals</strong>, accessible from <a href="https://nprintportal.in" class="text-brand-light hover:underline">https://nprintportal.in</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Print Portals and how we use it.
                 </p>
                 
                 <p class="text-gray-600 mb-6 leading-relaxed">

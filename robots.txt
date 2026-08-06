@@ -6,4 +6,4 @@ Allow: /
 
 
 
-Sitemap: https://printportals.xyz/sitemap.xml
+Sitemap: https://nprintportal.in/sitemap.xml

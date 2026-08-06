@@ -19,5 +19,5 @@ function print_a($arr)
 
 function asset_url($url)
 {
-	return 'https://printportals.xyz/admin/'.$url;
+	return 'https://nprintportal.in/admin/'.$url;
 }

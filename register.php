@@ -72,7 +72,7 @@ if (file_exists("config.php")) {
     <meta name="description" content="Register for a free Print Portals retailer account. Gain instant access to our secure PVC card formatting tools for Aadhaar, Voter ID, and PAN.">
     <meta name="author" content="Print Portals">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://printportals.xyz/register.php" />
+    <link rel="canonical" href="https://nprintportal.in/register.php" />
     
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
