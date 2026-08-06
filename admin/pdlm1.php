@@ -1,5 +1,13 @@
 <?php 
-include 'config.php'; 
+if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+} 
 $a = $_GET['a'];
 $q = "SELECT * FROM `dlm` WHERE id='$a' and payment_status=1";
 $res = mysqli_query($connection,$q);

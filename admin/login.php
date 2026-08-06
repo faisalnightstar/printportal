@@ -1,8 +1,24 @@
-				<?php session_start();  include('config.php'); error_reporting(0); ?>
+				<?php session_start();  if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+} error_reporting(0); ?>
 <!------------------------------ # connection ------------------------------->
 						<?php
 												error_reporting(0);
-												include("config.php");
+												if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 
 												
 												$sqla="select * from setting";
@@ -49,11 +65,27 @@
 					}					
 				}
 
-				?><?php session_start();  include('config.php'); error_reporting(0); ?>
+				?><?php session_start();  if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+} error_reporting(0); ?>
 <!------------------------------ # connection ------------------------------->
 						<?php
 												error_reporting(0);
-												include("config.php");
+												if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 
 												
 												$sqla="select * from setting";

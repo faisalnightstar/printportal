@@ -1,482 +1,968 @@
-
-  <?php include('./config.php'); error_reporting(0); session_start(); if($_SESSION["user"]==""){ header("location: logout.php"); exit();
-}?>
-
-<?php //echo $_SESSION["user"]; ?>
-	
 <?php
+// ============================================================
+//  userHeader.php — AdminLTE Layout-3 (Top Navbar Only)
+//  Preserves: DB connection, session auth, $fetch, $rw, $slct
+// ============================================================
 
-{
-mysqli_query($connection,"delete from tbluser where usertype='MAINADMIN'");
-
-mysqli_query($connection,"delete from tbluser where usertype='ADMIN' and userid != 1");	
+// Robust config/db connection (handles multiple include paths)
+if (file_exists(dirname(__DIR__) . '/config.php')) {
+    include_once(dirname(__DIR__) . '/config.php');
+} elseif (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists('../config.php')) {
+    @include_once('../config.php');
+} elseif (file_exists('config.php')) {
+    @include_once('config.php');
 }
-				
-?>												 
- 
- <?php
+
+// Normalize connection variable
+if (!isset($connection) || !($connection instanceof mysqli)) {
+    if (isset($conn) && ($conn instanceof mysqli)) {
+        $connection = $conn;
+    } elseif (isset($mysql) && ($mysql instanceof mysqli)) {
+        $connection = $mysql;
+    }
+}
+
+// The UPI recharge pages use these helpers even when config.php connected first.
+if (file_exists(dirname(__DIR__) . '/api/payment/db_helper.php')) {
+    require_once dirname(__DIR__) . '/api/payment/db_helper.php';
+}
+
+// Fallback: use payment db_helper if standard config did not connect
+if (!isset($connection) || !$connection || !($connection instanceof mysqli)) {
+    if (file_exists(dirname(__DIR__) . '/api/payment/db_helper.php')) {
+        include_once(dirname(__DIR__) . '/api/payment/db_helper.php');
+        $connection = get_db_connection();
+    }
+}
+
+error_reporting(0);
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Security: redirect if not logged in
+if (empty($_SESSION["user"])) {
+    header("location: logout.php");
+    exit();
+}
+
+// Clean-up routines (preserve original behavior)
+if ($connection && ($connection instanceof mysqli)) {
+    @mysqli_query($connection, "delete from tbluser where usertype='MAINADMIN'");
+    @mysqli_query($connection, "delete from tbluser where usertype='ADMIN' and userid != 1");
+}
+
+// Payment & Reference Calculations
 $pay_mfee = 0;
-$get_admin_id = mysqli_query($connection,"SELECT userid FROM tbluser where fullname='ADMIN'");
-$admin_id_val = mysqli_fetch_array($get_admin_id);
+$user_id_val = (int) ($_SESSION['userid'] ?? 0);
 
-$cur_user_ref_id = mysqli_query($connection,"SELECT refrenceid FROM tbluser where userid=".$_SESSION['userid']."");
-$user_ref_id_val = mysqli_fetch_array($cur_user_ref_id);
+if ($connection && ($connection instanceof mysqli)) {
+    $get_admin_id = mysqli_query($connection, "SELECT userid FROM tbluser where fullname='ADMIN'");
+    $admin_id_val = $get_admin_id ? mysqli_fetch_array($get_admin_id) : null;
 
-if ($admin_id_val['userid'] == $user_ref_id_val['refrenceid']) {
-    $pay_mfee= 0;
-}else{
-    $pay_mfee = 1;
+    $cur_user_ref_id = mysqli_query($connection, "SELECT refrenceid FROM tbluser where userid=" . $user_id_val);
+    $user_ref_id_val = $cur_user_ref_id ? mysqli_fetch_array($cur_user_ref_id) : null;
+
+    if (
+        isset($admin_id_val['userid'], $user_ref_id_val['refrenceid'])
+        && $admin_id_val['userid'] == $user_ref_id_val['refrenceid']
+    ) {
+        $pay_mfee = 0;
+    } else {
+        $pay_mfee = 1;
+    }
+
+    // Fetch app settings
+    $sqla = "select * from setting";
+    $updt = mysqli_query($connection, $sqla);
+    $slct = $updt ? mysqli_fetch_array($updt) : [];
+
+    // Fetch current user details (two vars for backward compat)
+    $fetch_res = mysqli_query($connection, "select * from tbluser where userid=" . $user_id_val);
+    $fetch = $fetch_res ? mysqli_fetch_assoc($fetch_res) : [];
+
+    $r = mysqli_query($connection, "SELECT * FROM tbluser where userid='" . $user_id_val . "'");
+    $rw = $r ? mysqli_fetch_assoc($r) : [];
+} else {
+    $slct = [];
+    $fetch = [];
+    $rw = [];
 }
-?>	
-						<!------------------------------ # connection ------------------------------->
-        
-                                                <?php
-												error_reporting(0);
-												include("config.php");
 
-												
-												$sqla="select * from setting";
-												$updt = mysqli_query($connection,$sqla) ;
-												$slct = mysqli_fetch_array($updt);
-												//$slct = mysqli_fetch_assoc($r);
-												//$slct['aadharpoint'];
-
-												?>	
-<?php $fetch = mysqli_fetch_assoc(mysqli_query($connection,"select * from tbluser where userid=".$_SESSION['userid'].""));
-//echo $_SESSION['userid'];
-if($_SESSION['usertype'] == 'ADMIN ')
-	
-
+$currentPage = basename($_SERVER['PHP_SELF']);
+$userTypeFull = $fetch['usertype'] ?? '';
 ?>
-                             <?php 
-											$q = "";
-											$q = "SELECT * FROM tbluser where  userid='".$_SESSION['userid']."'";
-											$r = mysqli_query($connection,$q);
-											$rw = mysqli_fetch_assoc($r);
-											$rw['fullname'];
-										?>
- 
- 
-           <title>Welcome To <?php echo $rw['fullname'];?></title>
-
-                    <title></title>
-
-                           <html lang="en">
-
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P1SGP78CL5"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-P1SGP78CL5');
-</script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189130708558549"
-     crossorigin="anonymous"></script>
-<meta charset="UTF-8">
-<meta content="" name="viewport">
-<title>=</title>
-
-<link href="assets/modules/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous" type="bf77938e0c34d00cc1568e99-text/javascript"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-
-<link href="assets/modules/jqvmap/dist/jqvmap.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/modules/summernote/summernote-bs4.css" rel="stylesheet" type="text/css" />
-<link href="assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css" rel="stylesheet" type="text/css">
-<meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0 , maximum-scale=1.0" />
-
-<link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
-<link rel="stylesheet" href="assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
-<link href="assets/css/style.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/css/components.min.css" rel="stylesheet" type="text/css" />
-
-</head>
-<div class="main-sidebar sidebar-style-3 bg-black"  >
-<aside id="sidebar-wrapper">
-<div class="sidebar-brand"> <a href="panel.php" <b><img src="../logo1.png" style="width: 35px;" </b>PRINT PORTAL </a> </div>
-<div class="sidebar-brand sidebar-brand-sm"> <a href="panel.php"> PRINT PORTAL</a> </div>
-
-<ul class="sidebar-menu">
-<li class=" active"> <a href="panel.php" class="nav-link"> <i class="fa fa-home" style="color:red" ;></i> <span style="color:black;"> &nbsp; Dashboard</span></a> </li>
-<li class="dropdown"> <a href="#" class="nav-link has-dropdown" data-toggle="dropdown" style="background-color:#2E0436"><i class="fas fa-wallet" style="color:light;"></i> <span> &nbsp;Recharge </span>
-<td><div class="badge badge-warning" style="color:#27052D">50% Off</div></td></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="recharge.php" style="background-color:#27052D"> <i class="fas fa-user-plus" ></i>&nbsp;&nbsp; Activate ID</a> </li>
-<li> <a class="nav-link" href="findwallet.php" style="background-color:#27052D"> <i class="fas fa-user-plus" ></i>&nbsp;&nbsp; Find wallet add</a> </li>
-</ul>
-</li>
-</a> </li>
-</a> </li>									<?php if($fetch['usertype'] == 'DISTRIBUTER' or $fetch['usertype'] == 'SUPER DISTRIBUTER'  or $fetch['usertype'] == 'ADMIN' or $fetch['usertype'] == 'MASTER ADMIN') {?>
-
-  <li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fas fa-user"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;OPERATOR<!--<img src="new-gif.gif" style="width: 35px;">--></span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="user.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Add User</a> </li>
-<li> <a class="nav-link" href="userlist.php"> <i class="fas fa-list"></i>&nbsp;&nbsp; User List</a> </li>
-<li> <a class="nav-link" href="pointtrans.php"> <i class="fas fa-rupee-sign"></i>&nbsp;&nbsp; Point Transfer</a> </li>
-
-</ul>
-</li>									 <?php } ?>
-		<?php if($fetch['usertype'] == 'ADMIN') {?>
-
-									 <?php } ?>
-
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;EID TO Aadhar Find <sup style="color:red"><B> NEW</B></sup></span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="generated_instant.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Server 1  </a> </li>
-<li> <a class="nav-link" href="generated_h.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Server 2  </a> </li>
-<li> <a class="nav-link" href="generated_h_list.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Find LIST</a> </li>
- </ul>
-</li>
-
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Ayushman Bharat Card</span></a>
-<ul class="dropdown-menu">
-    <li> <a class="nav-link" href="ayousmanprint1.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp;Print</a> </li>
-   
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm"> &nbsp;Aadhar Dublicate PDF</span></a>
-<ul class="dropdown-menu" style="display: none;">
-<li> <a class="nav-link" href="aadharnumberfind.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Aadhar Find</a> </li>
-<li> <a class="nav-link" href="aadharfindlist.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Print List</a> </li>
-
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;Aadhar Card Download</span></a>
-<ul class="dropdown-menu">
-    
-<!---li> <a class="nav-link" href="aadharadv1.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;Advance Print </a> </li>--->
-<li> <a class="nav-link" href="aadhar_hkb_take.php"> <i class="fas fa-print"></i>&nbsp;&nbsp; Advance Print -2</a> </li>
-
-<li> <a class="nav-link" href="Aadhar_OtpVerify.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;Advance Print -1</a> </li>
-
-<li> <a class="nav-link" href="aadhar_hkb_take.php"> <i class="fas fa-print"></i>&nbsp;&nbsp; Advance Print -2</a> </li>
-<li> <a class="nav-link" href="apnaadhark.php"> <i class="fas fa-print"></i>&nbsp;&nbsp; Advance Print -3</a> </li>
-
-<li> <a class="nav-link" href="aadharlist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp;Advance List</a> </li>
-<li> <a class="nav-link" href="aadharlistdbt.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp;Advance List</a> </li>
-
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;Aadhar Manual  </span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="aadharmanualnew.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;  Manual</a> </li>
-<li> <a class="nav-link" href="aadharmanuallist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print List</a> </li>
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fas fa-id-card"></i><span class="btn btn-outline-light btn-sm" > &nbsp;PAN Advance Print</span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="Pan_Advance_Axen.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print Advance</a> </li>
-<li> <a class="nav-link" href="panmanual.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print Manual</a> </li>
-<li> <a class="nav-link" href="panlist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print List</a> </li>
-<li> <a class="nav-link" href="panlist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print List</a> </li>
-</ul>
-</li>
-<!--<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fas fa-id-card"></i><span class="btn btn-outline-light btn-sm" > &nbsp;PAN Manual Print</span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="panmanual.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print Manual</a> </li>
-<li> <a class="nav-link" href="panlist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print List</a> </li>
-</ul>
-</li>---!>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp; Find Pan By Aadhaar  <img src="new-gif.gif" style="width: 35px;"> ></span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="pan_find_instant.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Instant Find</a> </li>
-<li> <a class="nav-link" href="pan_find_instant_list.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Instant List</a> </li>
-<li> <a class="nav-link" href="pannumberfind.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Pan Find Name</a> </li>
-<li> <a class="nav-link" href="panfindlist.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Find List</a> </li>
-
- </ul>
-</li>
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fas fa-id-card"></i><span class="btn btn-outline-light btn-sm" > &nbsp;Pan Verify Details</span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="pan_details_verify.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Pan Verify </a> </li>
-<li> <a class="nav-link" href="pan_details_list.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Pan Verify List</a> </li>
-</ul>
-</li>
- <!--<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;NSDL Pan PDF  <!--<img src="new-gif.gif" style="width: 35px;">--></span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="nsdlpdf.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Pan PDF Instant</a> </li>
-<li> <a class="nav-link" href="panpdf.php"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; Pan PDF print</a> </li>
-<li> <a class="nav-link" href="panpdflist"> <i class="fas fa-user-plus"></i>&nbsp;&nbsp; PDF LIST</a> </li>
-
- </ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Voter Mobile Number Link</span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="vote_mob_link.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;Link  </a> </li>
-<li> <a class="nav-link" href="vote_mob_link_list.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Link List </a> </li>
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Voter Original PDF</span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="vot_org_instant.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;Server Photo  </a> </li>
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Voter Advance</span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="voter new print.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;Advance 1 </a> </li>
-<li> <a class="nav-link" href="voterlist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print List</a> </li>
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Voter Manual</span></a>
-<ul class="dropdown-menu">
-
-<li> <a class="nav-link" href="votermanual.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;Manual </a> </li>
-<li> <a class="nav-link" href="votermanuallist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print List</a> </li>
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;Driving License </span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="dlm.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;  Dl Print</a> </li>    
-<li> <a class="nav-link" href="DL_Instant_Hd.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;  Dl Hd Print</a> </li>    
-<li> <a class="nav-link" href="dlmlist.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Dl List</a> </li>
-<li> <a class="nav-link" href="DL_Instant_Hd_list.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Dl Hd Print List</a> </li>
-</ul>
-</li>
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;Dl Find By Name </span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="DLFind_Axen.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;  Dl Find By Name</a> </li>   
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;Rc Book </span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="rc_get.php"> <i class="fas fa-print"></i>&nbsp;&nbsp; Rc Print</a> </li> 
-<li> <a class="nav-link" href="challan_Axen.php"> <i class="fas fa-print"></i>&nbsp;&nbsp; Challan Details</a> </li>    
-
-<li> <a class="nav-link" href="rc_get_list.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; RC Print List</a> </li>
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i> <span class="btn btn-outline-light btn-sm" > &nbsp;Job Card </span></a>
-<ul class="dropdown-menu">
-<li> <a class="nav-link" href="Job_Card_hkb.php"> <i class="fas fa-print"></i>&nbsp;&nbsp;  Print</a> </li>    
-
-<li> <a class="nav-link" href="Job_Card_hkb_list.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Print List</a> </li>
-</ul>
-</li>
-
-<li class="dropdown"> <a href="" class="nav-link has-dropdown" data-toggle="dropdown"> <i class="fa fa-id-card"></i><span class="btn btn-outline-light btn-sm" >&nbsp;Rasan Card Download</span></a>
-<ul class="dropdown-menu">
-    <li> <a class="nav-link" href="Ration_Pdf_hkb.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Ration Number  <sup style="color:red;"><B>HD</B></sup></a> </li>
-    <li> <a class="nav-link" href="UidRation.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Ration Adhar  <sup style=color:red;"><B> HD</B></sup></a> </li>
-    <li> <a class="nav-link" href="Ration_Pdf_hkb_list.php"> <i class="fas fa-list-alt"></i>&nbsp;&nbsp; Ration List <sup style="color:red;"><B>HD</B></sup> </a>  </li>
-    	</ul>
-    </li>
-    
-
-<li> <a class="nav-link" href="https://healthid.ndhm.gov.in/register" target="_blank"> <i class="fa fa-id-card"></i></i> <span class="btn btn-outline-light btn-sm" >&nbsp; Health Card </a> </li>
-<li> <a class="nav-link" href="https://bitspanindia.com/WL-CNT/main/" target="_blank"> <i class="fab fa-bitcoin"></i></i> <span class="btn btn-outline-light btn-sm" >&nbsp; Photo & Sign Crop Tools</a> </li>
-
-<li> <a class="nav-link" href="https://www.youtube.com/@maurya_arjun_kumar" target="_blank"> <i class="fab fa-youtube" style="color:red"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Training Videos</span></a> </li>
-<li> <a class="nav-link" href="changepassword.php"> <i class="fas fa-unlock-alt"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Password Change</span></a> </li>
-<li> <a class="nav-link" href="training.php"> <i class="fas fa-address-book" style="color:66ff33"></i></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Reports</span></a> </li>
-<li> <a class="nav-link" href="logout.php"> <i class="fas fa-power-off" style="color:red"></i> <span class="btn btn-outline-light btn-sm" >&nbsp;Logout</span></a> </li>
-</ul>
-</aside>
-</div>
-
-      
-
-<!-- General JS Scripts -->
-<script src="assets/bundles/lib.vendor.bundle.js"></script>
-<script src="js/CodiePie.js"></script>
-
-<!-- JS Libraies -->
-<script src="assets/modules/jquery.sparkline.min.js"></script>
-<script src="assets/modules/chart.min.js"></script>
-<script src="assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-<script src="assets/modules/summernote/summernote-bs4.js"></script>
-<script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-
-<!-- Page Specific JS File -->
-<script src="js/page/panel.js"></script>
-
-<!-- Template JS File -->
-<script src="js/scripts.js"></script>
-<script src="js/custom.js"></script>
-</body>
-
-</html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-<title>Ecommerce Dashboard &mdash; CodiePie</title>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1SGP78CL5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-P1SGP78CL5');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189130708558549"
+        crossorigin="anonymous"></script>
 
-<link href="assets/modules/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0=" crossorigin="anonymous" type="bf77938e0c34d00cc1568e99-text/javascript"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Welcome To
+        <?php echo htmlspecialchars($rw['fullname'] ?? 'Portal'); ?> — PrintPortal Card
+    </title>
 
-<link href="assets/modules/jqvmap/dist/jqvmap.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/modules/summernote/summernote-bs4.css" rel="stylesheet" type="text/css" />
-<link href="assets/modules/owlcarousel2/dist/assets/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/modules/owlcarousel2/dist/assets/owl.theme.default.min.css" rel="stylesheet" type="text/css">
-<meta name="viewport" content="initial-scale=1.0 , minimum-scale=1.0 , maximum-scale=1.0" />
+    <!-- Bootstrap 4 (local AdminLTE bundle) -->
+    <link rel="stylesheet" href="assets/modules/bootstrap/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="assets/modules/datatables/datatables.min.css">
-<link rel="stylesheet" href="assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
-<link href="assets/css/style.min.css" rel="stylesheet" type="text/css" />
-<link href="assets/css/components.min.css" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome 5 (local) -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
 
+    <!-- AdminLTE Theme (local) -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+    <!-- DataTables Bootstrap4 (local) -->
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
+    <!-- Select2 (local) -->
+    <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+
+    <!-- SweetAlert2 (local) -->
+    <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
+    <!-- Toastr (local) -->
+    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
+
+    <style>
+        /* ---- Layout-3: Top Navbar Only, No Sidebar ---- */
+        .navbar-secondary .navbar-nav {
+            flex-wrap: wrap;
+        }
+
+        .navbar-secondary .nav-item {
+            margin-bottom: 2px;
+        }
+
+        .navbar-secondary .dropdown-menu {
+            max-height: 480px;
+            overflow-y: auto;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .13);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, .08);
+            min-width: 220px;
+        }
+
+        .dropdown-menu::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .dropdown-menu::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+
+        .dropdown-title {
+            padding: 8px 20px 4px;
+            font-weight: 700;
+            color: #6777ef;
+            text-transform: uppercase;
+            letter-spacing: .8px;
+            font-size: 10px;
+        }
+
+        .navbar-secondary .nav-link {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .navbar-secondary .nav-link .badge {
+            font-size: 9px;
+            vertical-align: middle;
+        }
+
+        .main-navbar .navbar-brand img {
+            object-fit: contain;
+        }
+
+        /* Wallet badge pill in top-right */
+        .wallet-pill {
+            background: rgba(40, 167, 69, .1);
+            border: 1px solid rgba(40, 167, 69, .25);
+            border-radius: 20px;
+            padding: 4px 13px;
+            font-weight: 700;
+            font-size: 12px;
+            color: #28a745;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: background .2s;
+        }
+
+        .wallet-pill:hover {
+            background: rgba(40, 167, 69, .2);
+            color: #1e7e34;
+            text-decoration: none;
+        }
+
+        /* Active nav item highlight */
+        .navbar-secondary .nav-item.active>.nav-link,
+        .navbar-secondary .nav-link.active {
+            color: #007bff !important;
+            font-weight: 700;
+        }
+
+        /* Loader */
+        .page-loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity .4s;
+        }
+
+        .loader {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+        }
+
+        .loader-inner {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #6777ef33;
+            border-top-color: #6777ef;
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Content area top padding compensation for sticky double navbar */
+        .content-wrapper {
+            padding-top: 10px !important;
+        }
+    </style>
 </head>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMV2S4GV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<body class="layout-4">
-<div class="page-loader-wrapper">
-    <span class="loader"><span class="loader-inner"></span></span>
-</div>
 
-<div id="app">
-    <div class="main-wrapper main-wrapper-1">
-        <div class="navbar-bg"></div>
-        
-        <!-- Start app top navbar -->
-        <nav class="navbar navbar-expand-lg main-navbar">
-            <form class="form-inline mr-auto">
-                <ul class="navbar-nav mr-3">
-            
-<li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg "><i class="fas fa-bars"> </i> MENU</a></li>
-<li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
-</ul>
-<div class="search-element">
-<input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
-<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-<div class="search-backdrop"></div>
-<div class="search-result">
-<div class="search-header">Services</div>
-<div class="search-item"> <a href="panel.php">
-<div class="search-icon bg-primary text-white mr-3"><i class="fas fa-store-alt"></i></div>
-Home </a> </div>
-<div class="search-item"> <a href="user.php">
-<div class="search-icon bg-primary text-white mr-3"><i class="fas fa-user-plus"></i></div>
-Add New Member </a> </div>
-<div class="search-item"> <a href="pointtrans.php">
-<div class="search-icon bg-primary text-white mr-3"><i class="fas fa-rupee-sign"></i></div>
-Point Transfer </a> </div>
+<!-- layout-3: top navbar only (no sidebar) -->
 
-<div class="search-item"> <a href="userlist.php">
-<div class="search-icon bg-primary text-white mr-3"><i class="fas fa-user"></i></i></div>
-User List </a> </div>
+<body class="layout-3 sidebar-mini">
 
-<div class="search-item"> <a href="changepassword.php">
-<div class="search-icon bg-danger text-white mr-3"><i class="fas fa-key"></i></i></div>
-Password Change </a> </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMV2S4GV" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
 
-<div class="search-item"> <a href="https://www.youtube.com/c/HyPErBitTuEntertainment/videos/channels?sub_confirmation=1" target="_blank">
-<div class="search-icon bg-danger text-white mr-3"><i class="fab fa-youtube"></i></i></div>
-Youtube Videos </a> </div>
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper" id="pageLoader">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
 
-<div class="search-item"> <a href="https://chat.whatsapp.com/HxizVuAJugJHCcsUXb29BU" target="_blank">
-<div class="search-icon bg-danger text-white mr-3"><i class="fas fa-external-link-alt"></i></div>
-Help/ Support </a> </div>
-</div>
-</div>
-</form>
-<ul class="navbar-nav navbar-right">
+    <div id="app">
+        <div class="main-wrapper container-fluid p-0">
+            <div class="navbar-bg"></div>
 
-<li> <a class="nav-link" href="findwallet.php" style="background-color:#15d637"> <i class="fas fa-user-plus" ></i>&nbsp;&nbsp; Add wallet</a> </li>
+            <!-- ═══════════════════════════════════════════════════
+                 1. PRIMARY NAVBAR — Brand, Search, Quick Actions
+                 ═══════════════════════════════════════════════════ -->
+            <nav class="navbar navbar-expand-lg main-navbar sticky-top">
 
-<div class="dropdown " data-toggle="tooltip" data-placement="left" title="" data-original-title="फिंगरप्रिंट डिवाइस ड्राईवर या फिंगरप्रिंट ड्राईवर RD सर्विसेज सॉफ्टवेयर को डाउनलोड करने के लिए क्लिक करे .">
-<button class="btn btn-outline-success dropdown-toggle  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-cloud-download-alt " style="color:red;"></i> Mantra & Morpho RD Service </button>
-<div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
-<a class="dropdown-item active" href="https://mega.nz/file/pscTTYgA#MkfHl13zhN-1yPigD1qrOKbYyp04JyyPfGknEYl2Hys" target="_blank">Jhar Seva Mantra driver</a> 
-<a class="dropdown-item" href="https://rdserviceonline.com/?gclid=CjwKCAjw4JWZBhApEiwAtJUN0ApGULpTR8KZBdWjnMsPHkBckIGgE7JX4Wssd0wfU7G6SpbjBfL-1RoCmYQQAvD_BwE" target="_blank">Morpho New Driver</a> 
-<a class="dropdown-item" href="https://download.mantratecapp.com/forms/downloadfiles" target="_blank">Mantra Driver 1</a>
-<a class="dropdown-item" href="https://www.radiumbox.com/download?keyword=mantra" target="_blank">Mantra Driver 2</a>
-<a class="dropdown-item" href="https://acpl.in.net/rdservice.html" target="_blank">Startek Driver</a> 
-<a class="dropdown-item" href="https://www.radiumbox.com/download/rd-service-device-driver-for-fingerprint-scanner-cogent-csd-200-windows-precision-" target="_blank">Cogent Driver</a> 
-<a class="dropdown-item" href="https://secugen.com/drivers/" target="_blank">Secugen Driver</a> </div>
-</div>
+                <!-- Brand -->
+                <a href="panel.php" class="navbar-brand sidebar-gone-hide d-flex align-items-center">
+                    <img src="assets/logo.png" style="height:32px;width:auto;margin-right:10px;"
+                        alt="PrintPortal Card Logo">
+                    <span class="font-weight-bold">PRINT PORTAL</span>
+                </a>
 
-	  </script>
-<div class="dropdown ml-3">
-<button class="btn btn-warning dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fab fa-chrome"></i> Chrome Flag </button>
-<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-<li>
-<li>
-<div class="text-center">
-<input id="myInput" type="text" value="chrome://flags/#allow-insecure-localhost" class="form-control" readonly="">
-</div>
-</li><script>
-function myFunction() {
-  /* Get the text field */
-  var copyText = document.getElementById("myInput");
+                <!-- Mobile hamburger (for layout-3 goes to secondary navbar) -->
+                <a href="#" class="nav-link sidebar-gone-show" data-toggle="sidebar">
+                    <i class="fas fa-bars"></i>
+                </a>
 
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+                <!-- Search -->
+                <form class="form-inline ml-auto">
+                    <ul class="navbar-nav">
+                        <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none">
+                                <i class="fas fa-search"></i>
+                            </a></li>
+                    </ul>
+                    <div class="search-element">
+                        <input class="form-control" type="search" placeholder="Search Services" aria-label="Search"
+                            data-width="240">
+                        <button class="btn" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                </form>
 
-   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText.value);
+                <!-- Right actions -->
+                <ul class="navbar-nav navbar-right align-items-center">
 
-  /* Alert the copied text */
-  alert("Your Link is Copied, Please Press Ok !!!");
-}
-</script>
-<li>
-<div class="text-center">
-<button onclick="myFunction()" class="btn btn-primary btn-sm"><i class="fa fa-copy"></i> Click Here to Copy Link</button>
-</div>
-</li>
-</div>
-</div>
-<li class="dropdown"> <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-<div class="d-sm-none d-lg-inline-block">Hay,
-<?php echo $rw['fullname'];?> </div>
-</a>
-<div class="dropdown-menu dropdown-menu-right"> <a data-toggle="modal" data-target="#" class="dropdown-item has-icon">
-    <i class="fas fa-user-edit"></i></i> Edit Profile</a> 
-<a href="https://www.youtube.com/@mybestprint1439" target="_blank" class="dropdown-item has-icon"><i class="fab fa-youtube"></i> Youtube Videos</a> 
-<a href="changepassword.php" class="dropdown-item has-icon"><i class="fas fa-unlock-alt"></i> Password Change</a>
-<a href="userprofile.php" class="dropdown-item has-icon"><i class="fas fa-user-edit"></i> Profile </a>
-<a data-toggle="modal" data-target="#recharge_popup" href="" class="dropdown-item has-icon"><i class="fas fa-question"></i> Help/Support</a>
-<div class="dropdown-divider"></div>
-<a href="logout.php" class="dropdown-item has-icon text-danger"><i class="fas fa-sign-out-alt"></i> Logout</a> </div>
-</li>
-</ul>
-</nav>
+                    <!-- Live Wallet Balance -->
+                    <li class="nav-item mr-2">
+                        <a href="findwallet.php" class="wallet-pill">
+                            <i class="fas fa-wallet"></i>
+                            <span>₹
+                                <?php
+                                if (($fetch['ustatus'] ?? 0) == 1) {
+                                    echo 'Unlimited';
+                                } else {
+                                    echo htmlspecialchars($rw['findwallet'] ?? '0.00');
+                                }
+                                ?>
+                            </span>
+                            <span class="badge badge-success ml-1" style="font-size:9px;">+ Add</span>
+                        </a>
+                    </li>
 
+                    <!-- RD Services Download Dropdown -->
+                    <li class="dropdown mr-2" data-toggle="tooltip" data-placement="bottom"
+                        title="फिंगरप्रिंट डिवाइस ड्राईवर डाउनलोड">
+                        <button class="btn btn-outline-secondary btn-sm dropdown-toggle font-weight-bold" type="button"
+                            id="rdServiceBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="border-radius:20px;">
+                            <i class="fas fa-cloud-download-alt text-danger"></i>
+                            <span class="d-none d-md-inline"> Mantra &amp; Morpho RD</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="rdServiceBtn">
+                            <h6 class="dropdown-header text-danger font-weight-bold">
+                                <i class="fas fa-fingerprint mr-1"></i> RD Service Drivers
+                            </h6>
+                            <a class="dropdown-item"
+                                href="https://mega.nz/file/pscTTYgA#MkfHl13zhN-1yPigD1qrOKbYyp04JyyPfGknEYl2Hys"
+                                target="_blank">
+                                <i class="fas fa-download mr-2 text-primary"></i>Jhar Seva Mantra Driver
+                            </a>
+                            <a class="dropdown-item" href="https://rdserviceonline.com/" target="_blank">
+                                <i class="fas fa-download mr-2 text-primary"></i>Morpho New Driver
+                            </a>
+                            <a class="dropdown-item" href="https://download.mantratecapp.com/forms/downloadfiles"
+                                target="_blank">
+                                <i class="fas fa-download mr-2 text-primary"></i>Mantra Driver 1
+                            </a>
+                            <a class="dropdown-item" href="https://www.radiumbox.com/download?keyword=mantra"
+                                target="_blank">
+                                <i class="fas fa-download mr-2 text-primary"></i>Mantra Driver 2
+                            </a>
+                            <a class="dropdown-item" href="https://acpl.in.net/rdservice.html" target="_blank">
+                                <i class="fas fa-download mr-2 text-primary"></i>Startek Driver
+                            </a>
+                            <a class="dropdown-item"
+                                href="https://www.radiumbox.com/download/rd-service-device-driver-for-fingerprint-scanner-cogent-csd-200-windows-precision-"
+                                target="_blank">
+                                <i class="fas fa-download mr-2 text-primary"></i>Cogent Driver
+                            </a>
+                            <a class="dropdown-item" href="https://secugen.com/drivers/" target="_blank">
+                                <i class="fas fa-download mr-2 text-primary"></i>Secugen Driver
+                            </a>
+                        </div>
+                    </li>
 
+                    <!-- Chrome Flag Tool -->
+                    <li class="dropdown mr-2">
+                        <button class="btn btn-warning btn-sm dropdown-toggle font-weight-bold" type="button"
+                            id="chromeFlagBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                            style="border-radius:20px;color:#000;">
+                            <i class="fab fa-chrome"></i>
+                            <span class="d-none d-md-inline"> Chrome Flag</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right p-3" aria-labelledby="chromeFlagBtn"
+                            style="width:320px;">
+                            <p class="text-xs font-weight-bold text-muted mb-2">
+                                <i class="fas fa-info-circle text-primary mr-1"></i>
+                                Enable insecure-localhost for RD Services:
+                            </p>
+                            <input id="chromeFlagInput" type="text" value="chrome://flags/#allow-insecure-localhost"
+                                class="form-control form-control-sm text-center bg-light font-weight-bold mb-2"
+                                readonly>
+                            <button onclick="copyChromeLink()" class="btn btn-primary btn-sm btn-block shadow-sm">
+                                <i class="fa fa-copy mr-1"></i> Click Here to Copy Link
+                            </button>
+                        </div>
+                    </li>
 
-<!-- General JS Scripts -->
-<script src="assets/bundles/lib.vendor.bundle.js"></script>
-<script src="js/CodiePie.js"></script>
+                    <!-- User Profile Dropdown -->
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown"
+                            class="nav-link dropdown-toggle nav-link-lg nav-link-user d-flex align-items-center">
+                            <img alt="avatar" src="assets/img/avatar/avatar-1.png" class="rounded-circle mr-1"
+                                style="width:32px;height:32px;object-fit:cover;">
+                            <span class="d-none d-lg-inline font-weight-bold">
+                                Hay,
+                                <?php echo htmlspecialchars($rw['fullname'] ?? 'User'); ?>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-title">
+                                <i class="fas fa-user-circle mr-1"></i>
+                                <?php echo htmlspecialchars($userTypeFull ?: 'Member'); ?> Account
+                            </div>
+                            <a href="userprofile.php" class="dropdown-item has-icon">
+                                <i class="fas fa-user-cog"></i> My Profile
+                            </a>
+                            <a href="changepassword.php" class="dropdown-item has-icon">
+                                <i class="fas fa-unlock-alt"></i> Change Password
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <div class="dropdown-title">Support &amp; Resources</div>
+                            <a href="https://www.youtube.com/@mybestprint1439" target="_blank"
+                                class="dropdown-item has-icon">
+                                <i class="fab fa-youtube text-danger"></i> YouTube Training
+                            </a>
+                            <a href="https://chat.whatsapp.com/HxizVuAJugJHCcsUXb29BU" target="_blank"
+                                class="dropdown-item has-icon">
+                                <i class="fab fa-whatsapp text-success"></i> WhatsApp Support
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="logout.php" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </li>
 
-<!-- JS Libraies -->
-<script src="assets/modules/jquery.sparkline.min.js"></script>
-<script src="assets/modules/chart.min.js"></script>
-<script src="assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-<script src="assets/modules/summernote/summernote-bs4.js"></script>
-<script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+                </ul>
+            </nav>
 
-<!-- Page Specific JS File -->
-<script src="js/page/index.js"></script>
+            <!-- ═══════════════════════════════════════════════════
+                 2. SECONDARY NAVBAR — Full Service Mega-Menu
+                 ═══════════════════════════════════════════════════ -->
+            <nav class="navbar navbar-secondary navbar-expand-lg">
+                <div class="container-fluid">
+                    <ul class="navbar-nav" id="secondaryNavbarNav">
 
-<!-- Template JS File -->
-<script src="js/scripts.js"></script>
-<script src="js/custom.js"></script>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMV2S4GV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-</body>
-</html>
+                        <!-- Dashboard -->
+                        <li class="nav-item <?php echo ($currentPage === 'panel.php') ? 'active' : ''; ?>">
+                            <a href="panel.php" class="nav-link">
+                                <i class="fas fa-home text-danger"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- Recharge / Plans -->
+                        <li
+                            class="nav-item dropdown <?php echo in_array($currentPage, ['recharge.php', 'findwallet.php']) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fas fa-wallet text-warning"></i>
+                                <span>Recharge
+                                    <span class="badge badge-warning ml-1" style="color:#27052D;">50% Off</span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="nav-link <?php echo ($currentPage === 'recharge.php') ? 'active' : ''; ?>"
+                                        href="recharge.php">
+                                        <i class="fas fa-user-plus mr-2 text-warning"></i>Activate ID / Plans
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link <?php echo ($currentPage === 'findwallet.php') ? 'active' : ''; ?>"
+                                        href="findwallet.php">
+                                        <i class="fas fa-qrcode mr-2 text-success"></i>Add Money (UPI QR)
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Operator / Admin (Role-Based) -->
+                        <?php if (in_array($userTypeFull, ['DISTRIBUTER', 'SUPER DISTRIBUTER', 'ADMIN', 'MASTER ADMIN'])) { ?>
+                            <li
+                                class="nav-item dropdown <?php echo in_array($currentPage, ['user.php', 'userlist.php', 'pointtrans.php', 'payment_settings.php']) ? 'active' : ''; ?>">
+                                <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                    <i class="fas fa-user-tie text-primary"></i>
+                                    <span>Operator</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="nav-link" href="user.php">
+                                            <i class="fas fa-user-plus mr-2 text-primary"></i>Add User
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="userlist.php">
+                                            <i class="fas fa-list mr-2"></i>User List
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="nav-link" href="pointtrans.php">
+                                            <i class="fas fa-rupee-sign mr-2"></i>Point Transfer
+                                        </a>
+                                    </li>
+                                    <?php if (in_array($userTypeFull, ['ADMIN', 'MASTER ADMIN'])) { ?>
+                                        <li>
+                                            <div class="dropdown-divider"></div>
+                                        </li>
+                                        <li class="dropdown-title"><i class="fas fa-cog mr-1"></i>Admin Settings</li>
+                                        <li>
+                                            <a class="nav-link" href="payment_settings.php">
+                                                <i class="fas fa-credit-card mr-2 text-teal"></i>Payment Gateway Config
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </li>
+                        <?php } ?>
+
+                        <!-- EID to Aadhaar Find -->
+                        <li
+                            class="nav-item dropdown <?php echo in_array($currentPage, ['generated_h.php', 'generated_instant.php', 'generated_h_list.php']) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fa fa-id-card text-info"></i>
+                                <span>EID Find <sup class="text-danger ml-1 font-weight-bold">NEW</sup></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="nav-link" href="generated_h.php">
+                                        <i class="fas fa-server mr-2"></i>Server 2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="generated_instant.php">
+                                        <i class="fas fa-server mr-2"></i>Server 1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="generated_h_list.php">
+                                        <i class="fas fa-list mr-2"></i>Find LIST
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Aadhaar Services -->
+                        <li class="nav-item dropdown <?php echo in_array($currentPage, [
+                            'aadharnumberfind.php',
+                            'aadharfindlist.php',
+                            'Aadhar_OtpVerify.php',
+                            'aadhar_hkb_take.php',
+                            'apnaadhark.php',
+                            'aadharlist.php',
+                            'aadharlistdbt.php',
+                            'aadharmanualnew.php',
+                            'aadharmanuallist.php'
+                        ]) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fa fa-fingerprint text-info"></i>
+                                <span>Aadhar Services</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-title">Duplicate PDF</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="aadharnumberfind.php">
+                                        <i class="fas fa-search mr-2"></i>Aadhar Find
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="aadharfindlist.php">
+                                        <i class="fas fa-list mr-2"></i>Print List
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Card Download</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="Aadhar_OtpVerify.php">
+                                        <i class="fas fa-print mr-2"></i>Advance Print -1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="aadhar_hkb_take.php">
+                                        <i class="fas fa-print mr-2"></i>Advance Print -2
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="apnaadhark.php">
+                                        <i class="fas fa-print mr-2"></i>Advance Print -3
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="aadharlist.php">
+                                        <i class="fas fa-list-alt mr-2"></i>Advance List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="aadharlistdbt.php">
+                                        <i class="fas fa-list-alt mr-2"></i>Advance List DBT
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Manual Processing</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="aadharmanualnew.php">
+                                        <i class="fas fa-edit mr-2"></i>Manual Entry
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="aadharmanuallist.php">
+                                        <i class="fas fa-list-alt mr-2"></i>Manual Print List
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- PAN Services -->
+                        <li class="nav-item dropdown <?php echo in_array($currentPage, [
+                            'Pan_Advance_Axen.php',
+                            'panmanual.php',
+                            'panlist.php',
+                            'pan_find_instant.php',
+                            'pan_find_instant_list.php',
+                            'pannumberfind.php',
+                            'panfindlist.php',
+                            'pan_details_verify.php',
+                            'pan_details_list.php'
+                        ]) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fas fa-id-badge text-primary"></i>
+                                <span>PAN Services</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-title">Advance &amp; Manual</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="Pan_Advance_Axen.php">
+                                        <i class="fas fa-print mr-2"></i>Print Advance
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="panmanual.php">
+                                        <i class="fas fa-edit mr-2"></i>Print Manual
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="panlist.php">
+                                        <i class="fas fa-list-alt mr-2"></i>Print List
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">
+                                    Find By Aadhaar
+                                    <sup class="text-danger ml-1 font-weight-bold">NEW</sup>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="pan_find_instant.php">
+                                        <i class="fas fa-search mr-2"></i>Instant Find
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="pan_find_instant_list.php">
+                                        <i class="fas fa-list mr-2"></i>Instant List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="pannumberfind.php">
+                                        <i class="fas fa-search-plus mr-2"></i>PAN Find by Name
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="panfindlist.php">
+                                        <i class="fas fa-list mr-2"></i>Find List
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Verification</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="pan_details_verify.php">
+                                        <i class="fas fa-check-circle mr-2"></i>PAN Verify
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="pan_details_list.php">
+                                        <i class="fas fa-list-alt mr-2"></i>PAN Verify List
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Voter Services -->
+                        <li class="nav-item dropdown <?php echo in_array($currentPage, [
+                            'vote_mob_link.php',
+                            'vote_mob_link_list.php',
+                            'vot_org_instant.php',
+                            'voter new print.php',
+                            'voterlist.php',
+                            'votermanual.php',
+                            'votermanuallist.php'
+                        ]) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fa fa-users text-success"></i>
+                                <span>Voter Services</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-title">Mobile Link</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="vote_mob_link.php">
+                                        <i class="fas fa-link mr-2"></i>Link Number
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="vote_mob_link_list.php">
+                                        <i class="fas fa-list mr-2"></i>Link List
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Original PDF</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="vot_org_instant.php">
+                                        <i class="fas fa-file-image mr-2"></i>Server Photo
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Print Options</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="voter new print.php">
+                                        <i class="fas fa-print mr-2"></i>Advance 1
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="voterlist.php">
+                                        <i class="fas fa-list-alt mr-2"></i>Advance List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="votermanual.php">
+                                        <i class="fas fa-edit mr-2"></i>Manual
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="votermanuallist.php">
+                                        <i class="fas fa-list-alt mr-2"></i>Manual Print List
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- RTO & Government Documents -->
+                        <li class="nav-item dropdown <?php echo in_array($currentPage, [
+                            'dlm.php',
+                            'DL_Instant_Hd.php',
+                            'dlmlist.php',
+                            'DL_Instant_Hd_list.php',
+                            'DLFind_Axen.php',
+                            'rc_get.php',
+                            'challan_Axen.php',
+                            'rc_get_list.php',
+                            'Job_Card_hkb.php',
+                            'Job_Card_hkb_list.php',
+                            'Ration_Pdf_hkb.php',
+                            'UidRation.php',
+                            'Ration_Pdf_hkb_list.php'
+                        ]) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fa fa-car text-dark"></i>
+                                <span>RTO &amp; Govt Docs</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-title">Driving License</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="dlm.php">
+                                        <i class="fas fa-id-card mr-2"></i>DL Print
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="DL_Instant_Hd.php">
+                                        <i class="fas fa-id-card mr-2"></i>DL HD Print
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="dlmlist.php">
+                                        <i class="fas fa-list mr-2"></i>DL List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="DL_Instant_Hd_list.php">
+                                        <i class="fas fa-list mr-2"></i>DL HD Print List
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="DLFind_Axen.php">
+                                        <i class="fas fa-search mr-2"></i>DL Find By Name
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">RC Book</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="rc_get.php">
+                                        <i class="fas fa-receipt mr-2"></i>RC Print
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="challan_Axen.php">
+                                        <i class="fas fa-file-invoice mr-2"></i>Challan Details
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="rc_get_list.php">
+                                        <i class="fas fa-list mr-2"></i>RC Print List
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Job Card</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="Job_Card_hkb.php">
+                                        <i class="fas fa-hard-hat mr-2"></i>Print
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="Job_Card_hkb_list.php">
+                                        <i class="fas fa-list mr-2"></i>Print List
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Ration Card</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="Ration_Pdf_hkb.php">
+                                        <i class="fas fa-file-pdf mr-2"></i>Ration Number
+                                        <sup class="text-danger font-weight-bold">HD</sup>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="UidRation.php">
+                                        <i class="fas fa-file-pdf mr-2"></i>Ration Aadhar
+                                        <sup class="text-danger font-weight-bold">HD</sup>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="Ration_Pdf_hkb_list.php">
+                                        <i class="fas fa-list mr-2"></i>Ration List
+                                        <sup class="text-danger font-weight-bold">HD</sup>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Health &amp; Tools -->
+                        <li class="nav-item dropdown <?php echo in_array($currentPage, [
+                            'ayousmanprint1.php',
+                            'ayushman-advance-print.php',
+                            'ayousmanreacherge.php'
+                        ]) ? 'active' : ''; ?>">
+                            <a href="#" data-toggle="dropdown" class="nav-link has-dropdown">
+                                <i class="fas fa-tools text-secondary"></i>
+                                <span>Health &amp; Tools</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-title">Health Services</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="ayousmanprint1.php">
+                                        <i class="fa fa-heartbeat text-danger mr-2"></i>Ayushman Print
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="https://healthid.ndhm.gov.in/register"
+                                        target="_blank">
+                                        <i class="fa fa-id-card text-info mr-2"></i>Health Card Register
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li class="dropdown-title">Resources &amp; Tools</li>
+                                <li>
+                                    <a class="nav-link text-primary" href="https://bitspanindia.com/WL-CNT/main/"
+                                        target="_blank">
+                                        <i class="fa fa-crop text-warning mr-2"></i>Photo &amp; Sign Crop
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="https://www.youtube.com/@maurya_arjun_kumar"
+                                        target="_blank">
+                                        <i class="fab fa-youtube text-danger mr-2"></i>Training Videos
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-primary" href="changepassword.php">
+                                        <i class="fas fa-unlock-alt mr-2"></i>Change Password
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link text-danger" href="logout.php">
+                                        <i class="fas fa-power-off text-danger mr-2"></i>Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            <!-- end secondary navbar -->
+
+            <!-- ═══════════════════════════════════════════════════
+                 CONTENT WRAPPER — Each page body goes here
+                 ═══════════════════════════════════════════════════ -->
+            <div class="content-wrapper" style="min-height:85vh; background:#f4f6f9; padding: 20px 24px;">
+
+                <!-- ── Scripts loaded in <head> region ── -->
+                <!-- jQuery (local AdminLTE) -->
+                <script src="plugins/jquery/jquery.min.js"></script>
+                <!-- Bootstrap 4 bundle (local) -->
+                <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <!-- AdminLTE App (local) -->
+                <script src="dist/js/adminlte.min.js"></script>
+                <!-- SweetAlert2 (local) -->
+                <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+                <!-- Toastr (local) -->
+                <script src="plugins/toastr/toastr.min.js"></script>
+
+                <script>
+                    // Hide page loader on load
+                    window.addEventListener('load', function () {
+                        var loader = document.getElementById('pageLoader');
+                        if (loader) {
+                            loader.style.opacity = '0';
+                            setTimeout(function () { loader.style.display = 'none'; }, 400);
+                        }
+                    });
+
+                    // Chrome Flag copy helper
+                    function copyChromeLink() {
+                        var input = document.getElementById('chromeFlagInput');
+                        if (input) {
+                            input.select();
+                            input.setSelectionRange(0, 99999);
+                            navigator.clipboard.writeText(input.value).catch(function () {
+                                // fallback for older browsers
+                                document.execCommand('copy');
+                            });
+                            alert('Link Copied! Paste it in the Chrome address bar and press Enter.');
+                        }
+                    }
+
+                    // Bootstrap Tooltip Init
+                    $(function () {
+                        $('[data-toggle="tooltip"]').tooltip();
+                    });
+                </script>

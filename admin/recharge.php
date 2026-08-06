@@ -1,350 +1,212 @@
-<?php include('userHeader.php'); 
-include('manu.php'); 
-include('userFooter.php'); ?>
-      
+<?php 
+include('userHeader.php'); 
+?>
 
-
-<div class="main-content" style="min-height: 662px;">
-          <div class="content-wrapper">
-					<section id="basic-form-layouts">
-
-  <div class="row">
-
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-       <div class="card-body">
-          <div class="px-3">
- <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
-
-          <div class="card">
-            <div class="card-body">
-  
-          <h4 class="card-title"></h4>
-<div class="container-fluid">
-
+<!-- Tailwind CSS & Lucide Icons for High-Contrast Responsive Layout -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+    });
+</script>
 
 <style>
-    body {
-        background-color: #f7f7f7;
-        margin-top: 0px;
-    }
+    /* High contrast text overrides for AdminLTE template integration */
+    .recharge-wrapper { color: #0f172a !important; font-family: inherit; }
+    .plan-card { background-color: #ffffff !important; border: 1px solid #cbd5e1 !important; color: #0f172a !important; }
+    .plan-title { color: #0f172a !important; font-weight: 800 !important; }
+    .plan-price { color: #0f172a !important; font-weight: 800 !important; }
+    .plan-desc { color: #475569 !important; }
+    .plan-feature { color: #334155 !important; font-weight: 500; }
+</style>
 
-    /* pricing tables */
-    .pricing-table {
-        background: #e9f0f4;
-        text-align: center;
-        margin: 0px 0;
-    }
+<div class="recharge-wrapper max-w-7xl mx-auto space-y-6 py-4 px-2">
 
-    .pricing-table ul,
-    .pricing-table ol {
-        margin-bottom: 0;
-        padding-left: 0;
-    }
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto space-y-2 mb-6">
+        <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-extrabold rounded-full uppercase tracking-wider">Account Upgrade & Plans</span>
+        <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Choose Your Access Tier</h1>
+        <p class="text-xs text-slate-600 font-medium">Recharge your portal account instantly using dynamic UPI QR codes. Instant automated activation.</p>
+    </div>
 
-    .pricing-title {
-        font-size: 1.5rem;
-        font-weight: 700;
-        padding: 30px;
-        margin-bottom: 0;
-    }
-
-    .pricing-table-price {
-        background: #cdd4d8;
-        font-weight: 700;
-        padding: 10px;
-        margin-bottom: 30px;
-    }
-
-    .pricing-table-price.w-rounded-price {
-        display: table;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin: 0 auto 30px auto;
-        padding: 0;
-    }
-
-    .rounded-price {
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .rounded-price .pricing-price {
-        font-size: 1.75rem;
-    }
-
-    .rounded-price .pricing-currency {
-        vertical-align: 10px;
-    }
-
-    .pricing-table-price p {
-        color: #000;
-        margin-bottom: 0;
-    }
-
-    .pricing-currency {
-        font-size: 1rem;
-        font-weight: 700;
-        vertical-align: 25px;
-    }
-
-    .pricing-price {
-        font-size: 3rem;
-        font-weight: 700;
-    }
-
-    .pricing-period {
-        font-weight: 700;
-    }
-
-    .pricing-table-content li {
-        margin-bottom: 15px;
-    }
-
-    .pricing-table-button {
-        padding: 15px 0 35px;
-    }
-
-    .featured.pricing-table {
-        background: #9c64b8;
-    }
-
-    .featured.pricing-table .pricing-title {
-        color: #fff;
-    }
-
-    .featured.pricing-table .pricing-table-content ul li {
-        color: #eee;
-    }
-
-    .featured.pricing-table .pricing-table-price {
-        background: #8853a1;
-    }
-
-    .featured.pricing-table .pricing-table-price p {
-        color: #fff;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .bg-info-hover {
-        background-color: #1397af !important;
-    }
-
-    .bg-info {
-        background-color: #21b9d5 !important;
-    }
-
-    .bg-primary-hover {
-        background-color: #8853a1 !important;
-    }
-
-    .bg-primary {
-        background-color: #a54949 !important;
-    }
-
-    .text-white {
-        color: #fff !important;
-    }
-    </style>
-
-
-
-
-
-<style type="text/css">
-            .scroll {
+    <!-- Pricing Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-2">
+        
+        <!-- Retailer Plan (₹299) -->
+        <div class="plan-card rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="plan-title text-lg font-bold">Retailer</h3>
+                    <span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[11px] font-bold border border-slate-200">Personal Use</span>
+                </div>
+                <div class="flex items-baseline">
+                    <span class="plan-price text-3xl">₹299</span>
+                    <span class="text-xs text-slate-500 font-medium ml-1">/ one-time</span>
+                </div>
+                <p class="plan-desc text-xs border-b border-slate-200 pb-4">Ideal for personal print jobs & individual service access.</p>
                 
+                <ul class="space-y-2.5 text-xs plan-feature">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span><strong class="text-slate-900">400 Points</strong> credited</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>Aadhaar Card Search</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>PAN Find Service</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>Advance Voter Card</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>24/7 Priority Support</span>
+                    </li>
+                </ul>
+            </div>
+
+            <button onclick="openUpiRechargeModal(299)" class="mt-6 w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-sm transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="qrcode" class="w-4 h-4"></i> Recharge ₹299
+            </button>
+        </div>
+
+        <!-- Distributor Plan (₹999) - Highlighted -->
+        <div class="bg-gradient-to-b from-blue-900 to-slate-900 text-white border-2 border-blue-500 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div class="absolute top-3 right-3">
+                <span class="px-2.5 py-0.5 rounded-full bg-blue-500 text-white text-[10px] font-extrabold shadow-sm uppercase tracking-wider">Popular</span>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-lg font-extrabold text-white">Distributor</h3>
+                </div>
+                <div class="flex items-baseline">
+                    <span class="text-3xl font-extrabold text-white">₹999</span>
+                    <span class="text-xs text-blue-200 font-medium ml-1">/ one-time</span>
+                </div>
+                <p class="text-xs text-blue-200 border-b border-blue-800/80 pb-4">Create unlimited retailer accounts & offer CSC services.</p>
                 
-                width: auto;
-                height: 900px;
-                overflow-x: hidden;
-                overflow-y: auto;
-                text-align:justify;
-            }
-            
-            .hide-menu{
-                font-size: 8px;
+                <ul class="space-y-2.5 text-xs text-blue-100">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-blue-400 flex-shrink-0"></i>
+                        <span><strong class="text-white">19,999 Points</strong> credited</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-blue-400 flex-shrink-0"></i>
+                        <span>Create <strong class="text-white">Unlimited Retailers</strong></span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-blue-400 flex-shrink-0"></i>
+                        <span>CSC ID Free Login</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-blue-400 flex-shrink-0"></i>
+                        <span>Aadhaar, PAN & Voter Tools</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-blue-400 flex-shrink-0"></i>
+                        <span>24/7 VIP Support</span>
+                    </li>
+                </ul>
+            </div>
+
+            <button onclick="openUpiRechargeModal(999)" class="mt-6 w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow-md shadow-blue-500/20 transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="qrcode" class="w-4 h-4"></i> Recharge ₹999
+            </button>
+        </div>
+
+        <!-- Master Plan (₹1499) -->
+        <div class="plan-card rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="plan-title text-lg font-bold">Master</h3>
+                    <span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-800 text-[11px] font-bold border border-purple-200">Unlimited</span>
+                </div>
+                <div class="flex items-baseline">
+                    <span class="plan-price text-3xl">₹1499</span>
+                    <span class="text-xs text-slate-500 font-medium ml-1">/ one-time</span>
+                </div>
+                <p class="plan-desc text-xs border-b border-slate-200 pb-4">Unlimited points, Unlimited Retailers & Distributors.</p>
                 
-            }
-            </style>
+                <ul class="space-y-2.5 text-xs plan-feature">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span><strong class="text-slate-900">Unlimited Points</strong></span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>Unlimited Retailer & Distributor</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>CSC All Services Access</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>Point Transfer Control</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>Dedicated Support Manager</span>
+                    </li>
+                </ul>
+            </div>
 
-<h4> <marquee behavior="alternate" > <b> Print Portal आपना अकाउंट रिचार्ज  करे रिचार्ज के बिना ID Active Nahi Hoga   Recharge Kare </b> </marquee></h4> 
+            <button onclick="openUpiRechargeModal(1499)" class="mt-6 w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-sm transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="qrcode" class="w-4 h-4"></i> Recharge ₹1499
+            </button>
+        </div>
 
+        <!-- White Label Plan (₹2999) -->
+        <div class="plan-card rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between relative overflow-hidden group">
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="plan-title text-lg font-bold">White Label</h3>
+                    <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold border border-amber-200">Enterprise</span>
+                </div>
+                <div class="flex items-baseline">
+                    <span class="plan-price text-3xl">₹2999</span>
+                    <span class="text-xs text-slate-500 font-medium ml-1">/ one-time</span>
+                </div>
+                <p class="plan-desc text-xs border-b border-slate-200 pb-4">Full admin level access with unlimited users across all tiers.</p>
+                
+                <ul class="space-y-2.5 text-xs plan-feature">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span><strong class="text-slate-900">Unlimited All Points & Users</strong></span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>Master Admin Rights</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>CSC All Services Integration</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>Custom Branding Setup</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 flex-shrink-0"></i>
+                        <span>24/7 Priority Hotline</span>
+                    </li>
+                </ul>
+            </div>
 
+            <button onclick="openUpiRechargeModal(2999)" class="mt-6 w-full py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs rounded-xl shadow-sm transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="qrcode" class="w-4 h-4"></i> Recharge ₹2999
+            </button>
+        </div>
 
-<div class="white-box p-0">
-<section id="pricing" class="bg-white">
-<div class="container">
-<div class="row">
-<div class="col-md-3">
-<div class="pricing-table">
-<div class="pricing-table-title">
-<h5 class="pricing-title bg-info-hover text-white">Retailer</h5>
-</div>
-<div class="pricing-table-price text-center bg-info">
-<p class="title-font">
-<span class="pricing-period text-white mr-1">From</span>
-<span class="pricing-currency text-white">₹</span>
-<span class="pricing-price text-white">299</span>
-</p>
-</div>
-<div class="pricing-table-content">
-<ul>
-<li><strong>400 points</strong></li>
-<li><strong>Personal Uses Only/-</strong></li>
-<li><strong>Aadhar card</strong></li>
-<li><strong>Pan card</strong></li>
-<li><strong>Advance Voter card</strong></li>
-<li><strong>CSC All Services</strong></li>
-<li><strong>24/7 Support</strong></li>
-</ul>
-<div class="pricing-table-button">
- <form action="HBConnect/retailer/index.php?userid=<?php echo $_SESSION['userid'];?>&amount=299&usertype=RETAILER" method="POST">
-                  <input type="hidden" name="amount" value="299" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
-                  <input type="hidden" name="point" value="299" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
-                  <input class="form-control "  id="aadharno" name="pay_uidss" type="hidden" readonly  value="<?php echo $_SESSION['userid'];?>">
-                  <input type="submit" name="sub_val" class="btn btn-dark" style="background:dark" value="Recharge Now" id="pay_now"/>
-                  </form>
-
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="pricing-table bg-lightgrey">
-<div class="pricing-table-title">
- <h5 class="pricing-title bg-primary-hover text-white">DISTRIBUTER</h5>
-</div>
-<div class="pricing-table-price text-center bg-primary">
-<p class="title-font">
-<span class="pricing-period text-white mr-1">From</span>
-<span class="pricing-currency text-white">₹</span>
-<span class="pricing-price text-white">999</span>
-</p>
-</div>
-<div class="pricing-table-content">
-<ul>
-<li><strong>19999 Points</strong></li>
-<li><strong>Create Unlimited Retailer</strong></li>
-<li><strong>CSC ID Free Login</strong></li>
-<li><strong>Aadhar card</strong></li>
-<li><strong>Pan card</strong></li>
-<li><strong>Advance Voter card</strong></li>
-<li><strong>CSC All Services</strong></li>
-<li><strong>24/7 Support</strong></li>
-</ul>
-<div class="pricing-table-button">
- <form action="HBConnect/distributor/index.php?userid=<?php echo $_SESSION['userid'];?>&amount=999&usertype=DISTRIBUTER" method="POST">
-                  <input type="hidden" name="amount" value="999" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
-            <input class="form-control "  id="aadharno" name="pay_uidss" type="hidden" readonly  value="<?php echo $_SESSION['userid'];?>">
-                 <input type="submit" name="sub_val" class="btn btn-dark" style="background:dark" value="Recharge Now" id="pay_now"/>
-                  </form>
-</div>
-</div>
-</div>
-</div>
-
-
-<div class="col-md-3">
-<div class="pricing-table">
-<div class="pricing-table-title">
-<h5 class="pricing-title bg-info-hover text-white">MASTER</h5>
-</div>
-<div class="pricing-table-price text-center bg-info">
-<p class="title-font">
-<span class="pricing-period text-white mr-1">From</span>
-<span class="pricing-currency text-white">₹</span>
-<span class="pricing-price text-white">1499</span>
-</p>
-</div>
-<div class="pricing-table-content">
-<ul>
-<li><strong>Unlimited points</strong></li>
-<li><strong>Unlimited Retailer &amp; Distributer</strong></li>
-<li><strong>CSC ID Free Login</strong></li>
-<li><strong>Aadhar card</strong></li>
-<li><strong>Pan card</strong></li>
-<li><strong>Advance Voter card</strong></li>
-<li><strong>CSC All Services</strong></li>
-<li><strong>24/7 Support</strong></li>
-</ul>
-<div class="pricing-table-button">
- <form action="HBConnect/master/index.php?userid=<?php echo $_SESSION['userid'];?>&amount=1499&usertype=SUPER DISTRIBUTER" method="POST">
-                  <input type="hidden" name="amount" value="1499" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
-            <input class="form-control "  id="aadharno" name="pay_uidss" type="hidden" readonly  value="<?php echo $_SESSION['userid'];?>">
-                 <input type="submit" name="sub_val" class="btn btn-dark" style="background:dark" value="Recharge Now" id="pay_now"/>
-                  </form>
+    </div>
 
 </div>
-</div>
-</div>
-</div>
-<div class="col-md-3">
-<div class="pricing-table bg-lightgrey">
-<div class="pricing-table-title">
- <h5 class="pricing-title bg-primary-hover text-white">White Label</h5>
-</div>
-<div class="pricing-table-price text-center bg-primary">
-<p class="title-font">
-<span class="pricing-period text-white mr-1">From</span>
-<span class="pricing-currency text-white">₹</span>
-<span class="pricing-price text-white">2999</span>
-</p>
-</div>
-<div class="pricing-table-content">
-<ul>
-<li><strong>unlimited points</strong></li>
-<li><strong>Unlimited All Users</strong></li>
-<li><strong>CSC ID Free Login</strong></li>
-<li><strong>Aadhar card</strong></li>
-<li><strong>Pan card</strong></li>
-<li><strong>Advance Voter card</strong></li>
-<li><strong>CSC All Services</strong></li>
-<li><strong>24/7 Support</strong></li>
-</ul>
-<div class="pricing-table-button">
- <form action="HBConnect/whitelabel/index.php?userid=<?php echo $_SESSION['userid'];?>&amount=2999&usertype=MASTER ADMIN" method="POST">
-                  <input type="hidden" name="amount" value="2999" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
-            <input class="form-control "  id="aadharno" name="pay_uidss" type="hidden" readonly  value="<?php echo $_SESSION['userid'];?>">
-                 <input type="submit" name="sub_val" class="btn btn-dark" style="background:dark" value="Recharge Now" id="pay_now"/>
-                  </form>
-</div></div></div></div></div></div></section>
 
-
-
-
-
-</div>
-</div></div></div></div></div></div></section></div></div></div></div></div></section></div></div>
-
-<!-- General JS Scripts -->
-<script src="assets/bundles/lib.vendor.bundle.js"></script>
-<script src="js/CodiePie.js"></script>
-
-<!-- JS Libraies -->
-<script src="assets/modules/jquery.sparkline.min.js"></script>
-<script src="assets/modules/chart.min.js"></script>
-<script src="assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-<script src="assets/modules/summernote/summernote-bs4.js"></script>
-<script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-
-<!-- Page Specific JS File -->
-<script src="js/page/panel.js"></script>
-
-<!-- Template JS File -->
-<script src="js/scripts.js"></script>
-<script src="js/custom.js"></script>
-</body>
-
-<!--   Tue, 07 Jan 2020 03:35:12 GMT -->
-</html>
+<?php include('upi_recharge_modal.php'); ?>
+<?php include('userFooter.php'); ?>

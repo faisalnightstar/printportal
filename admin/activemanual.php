@@ -1,8 +1,24 @@
-<?Php include('config.php'); ?>
+<?Php if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+} ?>
 
 <?php
 error_reporting(0);
-include("config.php");
+if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 
 $id = $_REQUEST['aadharmanualid'];
 

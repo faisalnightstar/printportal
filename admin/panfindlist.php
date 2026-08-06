@@ -133,7 +133,7 @@ if (isset($_GET['refund']) && $_GET['refund'] == 1 && $_GET['id'] != NULL) {
 									<?php if($b['payment_status']==1){ ?>
 									  <a  class="btn btn-success" id="print" style=" padding-left:15px;"   href="#<?php echo $b['aadhar']?>" ><?php echo $b['status']?> </a> </td>				
 									  <?php }else if($b['payment_status']==0){ ?>
-									 	<a  style=" padding-left:15px;"  class="btn btn-danger" href="panfindpay/index.php?id=<?php echo $b['id'];?>&amount=<?php echo $amt['amount'];?>" > Pay</a> 
+									 	<a  style=" padding-left:15px;"  class="btn btn-danger" href="findwallet.php" > Pay via Wallet / QR</a> 
 								   <?php }else{ ?>
 									<a  style=" padding-left:15px;"  class="btn btn-danger" href="#" > Not Linked </a> 
 										<?php } ?></td>

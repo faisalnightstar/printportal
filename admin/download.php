@@ -1,5 +1,13 @@
 <?php
-require_once('config.php');
+if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 include_once "downloader10/codepitch/autoload.php";
 if (isset($_POST['paa'])) {
   $card = $_POST['paa'];

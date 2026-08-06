@@ -70,9 +70,9 @@ include('manu.php');
 										    ?>
 										    
 										<td align="center" valign="middle">
-										   <form action="voteradvance2/index.php?voterautoid=<?php echo $b['voterautoid'];?>&amount=<?php echo $amt['amount'];?>" method="post">
+										   <form action="findwallet.php" method="post">
 										   <input type="hidden"  name="custId" value="<?php echo $b['voterautoid'];  ?>">
-										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning"value="PAY NOW"></form></td>
+ 										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning" value="PAY VIA WALLET / QR"></form></td>
 										<?php
 										}
 										else

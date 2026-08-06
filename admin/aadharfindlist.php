@@ -60,11 +60,11 @@
                                            <td > <?php echo $b['status'];?> </td>
                                            <td > <a class="btn btn-primary" href="aadhaarfindview.php?id=<?php echo $b['id'];?>" target="_blank">View</a> </td>
 
-                                           <<td > <?php if($b['payment_status']==0){ ?>
-										   <form action="aadhardublicatepay/index.php?id=<?php echo $b['id'];?>&amount=<?php echo $amt['amount'];?>" method="post">
+                                           <td > <?php if($b['payment_status']==0){ ?>
+										   <form action="findwallet.php" method="post">
 										        <input type="hidden"  name="CUST_ID" value="<?php echo $b['id'];  ?>">
-										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning"value="PAY">
-										     </form>
+ 										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning" value="PAY VIA WALLET / QR">
+ 										     </form>
                                            <?php }else if($b['status']=="Generated" && $b['payment_status']==1){?>
                                             <a class="btn btn-success" href="printaadhaarfind.php?a=<?php echo $b['id'];?>">Print</a>
                                            <?php }else{?>

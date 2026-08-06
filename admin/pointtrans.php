@@ -34,7 +34,15 @@
 							<div class="row">
 							   <?php
 								//including the database connection file
-								include("./config.php");
+								if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 								$msg = '';
 								if(isset($_POST['submit'])) {	
 									

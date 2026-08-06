@@ -1,6 +1,14 @@
 <?php
 $getid = $_GET['id'];
-include('../config.php');
+if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 $dl_info = mysqli_fetch_assoc(mysqli_query($connection, "select * from dllist where id=" . $getid . ""));
 extract($dl_info);
 if($payment_status==0)

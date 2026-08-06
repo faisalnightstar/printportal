@@ -67,12 +67,12 @@
                                        <td align="center" valign="middle"> <a   class="btn btn-raised btn-success btn-min-width mr-1 mb-1" href="aadhar3/aadhar.php?searchid=<?php echo $b['aadharautoid']?>" target="_blank"> Print </a> </td>
 <?php } else{ ?>
                                         										<td align="center" valign="middle">
-										    <form action="adpay/index.php?pay_uid=<?php echo $b['aadharautoid']?>&Pay_Amt=1" method="post">
+										    <form action="findwallet.php" method="post">
 										        <input type="hidden"  name="custId" value="<?php echo $b['aadharautoid'];  ?>">
-										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning"value="PAY NOW"></form></td>
+ 										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning" value="PAY VIA WALLET / QR"></form></td>
 
 
-	                                    <?php }
+ 	                                    <?php }
                                         ?>
 
 <?php
@@ -81,9 +81,9 @@
 
                                     <?php } else{ ?>
                                         										<td align="center" valign="middle">
-										    <form action="adpay/index.php?pay_uid=<?php echo $b['aadharautoid']?>&Pay_Amt=1" method="post">
+										    <form action="findwallet.php" method="post">
 										        <input type="hidden"  name="custId" value="<?php echo $b['aadharautoid'];  ?>">
-										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning"value="PAY NOW"></form></td>
+ 										     <input type="submit" name ="sub_val" style="margin-top:2px;margin-bottom:2px;padding-top:2px;padding-bottom:2px;"  class="btn btn-warning" value="PAY VIA WALLET / QR"></form></td>
 
                                         <?php }
                                         ?>

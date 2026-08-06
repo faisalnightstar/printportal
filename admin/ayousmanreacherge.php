@@ -1,10 +1,26 @@
-<?php include('config.php'); include('userHeader.php'); error_reporting(0); session_start(); if($_SESSION["user"]==""){ header("location: index.php"); exit();
+<?php if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+} include('userHeader.php'); error_reporting(0); session_start(); if($_SESSION["user"]==""){ header("location: index.php"); exit();
 }?>
 	
 	
 	<?php
 												error_reporting(0);
-												include("config.php");
+												if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 
 												
 												$sqla="select * from setting";
@@ -215,7 +231,7 @@
                     <li><i class="fa fa-database"></i> No Extra Charges for PDF</li>
                 </ul></div>
                                     <!-- Pricing Features End -->
-                  <form action="<?php echo $slct['baseurl'];?>/admin/paytms/index.php?pay_uid=<?php echo $_SESSION['userid'];?>&Pay_Amt=16&usertype=RETAILER" method="POST">               
+                  <form action="findwallet.php" method="POST">               
                  <input type="submit" name="sub_val" class="view-more" value="Click Here To Buy This Plan" id="pay_now" style="margin-top:5px;background: #cc0a1a;
     border: none;padding: 13px;
     border-radius: 25px;
@@ -241,8 +257,8 @@
                     <li><i class="fa fa-database"></i> No Extra Charges for PDF</li>
                 </ul></div>
                                    <!-- Pricing Features End -->
-                  <form action="<?php echo $slct['baseurl'];?>/admin/paytm/index.php?pay_uid=<?php echo $_SESSION['userid'];?>&Pay_Amt=100&usertype=RETAILER" method="POST">
-                  <input type="hidden" name="amount" value="bstater" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
+                  <form action="findwallet.php" method="POST">
+                  <input type="hidden" name="amount" value="100" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
                   <input type="hidden" name="did" value="1" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
                   <input type="hidden" name="userid" value="ADMIN" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
                  <input type="submit" name="sub_val" class="view-more" value="Click Here To Buy This Plan" id="pay_now" style="margin-top:5px;background: #3b7a07;
@@ -268,8 +284,8 @@
                     <li><i class="fa fa-database"></i> No Extra Charges for PDF</li>
                 </ul></div>
                                   <!-- Pricing Features End -->
-                  <form action="<?php echo $slct['baseurl'];?>/admin/paytm/index.php?pay_uid=<?php echo $_SESSION['userid'];?>&Pay_Amt=199&usertype=RETAILER" method="POST">
-                  <input type="hidden" name="amount" value="cstater" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
+                  <form action="findwallet.php" method="POST">
+                  <input type="hidden" name="amount" value="199" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
                   <input type="hidden" name="did" value="1" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
                   <input type="hidden" name="userid" value="ADMIN" class="form-control" readonly size="20" style="width: 224px;margin-top:10px;">
                  <input type="submit" name="sub_val" class="view-more" value="Click Here To Buy This Plan" id="pay_now" style="margin-top:5px;background: #093adb;

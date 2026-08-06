@@ -1,28 +1,25 @@
-<?Php
+<?php
+if (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} else {
+    $Server = "localhost";
+    $username = "u964961549_farook";
+    $password = "Farook2026@#";
+    $database = "u964961549_services";
 
-$Server = 'localhost';
-$username = "u964961549_farook";
-$password = 'Nidiprint@12';
-
-//$Server = 'localhost';
-//$username = 'u169352913_er86444';
-//$password = 'Adprint@123';
-
-$database = 'u929844834_sevicep';
-
-
-//$database = 'u169352913_er86444';
-
-//echo $Server;
-$connection = mysqli_connect($Server,$username,$password);
-
-if($connection)
-{
-    mysqli_select_db($connection,$database);
-}
-else
-{
-    echo "Could not connect to server";
+    $connection = @mysqli_connect($Server, $username, $password, $database);
+    if (!$connection) {
+        $password_alt = "Farook2026@#";
+        $database_alt = "u964961549_services";
+        $connection = @mysqli_connect($Server, $username, $password_alt, $database_alt);
+    }
 }
 
+if (!isset($connection) || !($connection instanceof mysqli)) {
+    if (isset($conn) && ($conn instanceof mysqli)) {
+        $connection = $conn;
+    } elseif (isset($mysql) && ($mysql instanceof mysqli)) {
+        $connection = $mysql;
+    }
+}
 ?>

@@ -132,7 +132,15 @@ if (isset($_POST['aadhar']))
   readfile($destination);
 
 if($my==TRUE){
-    include("config.php");
+    if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
     $instant_update="UPDATE tbluser SET findwallet= findwallet - 30 where mobileno='" .$phone. "'";
     $upok=mysqli_query($connection,$instant_update);
     

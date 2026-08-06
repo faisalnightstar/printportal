@@ -735,7 +735,7 @@ $("#signInp").change(function(){
       
       <div class="modal-body" style="height: 243px;">
 	 <img src="abs.jpg" height="200px" width="100%">
-	<form method="post" action="paytmv/index.php">
+	<form method="post" action="findwallet.php">
 									<div class="">
 									
 									 <p style="    font-size: 18px;
@@ -746,7 +746,15 @@ $("#signInp").change(function(){
 											<div class="col-md-3 col-sm-3 col-xs-6">
 											<?php
 												error_reporting(0);
-												include("config.php");
+												if (file_exists(__DIR__ . '/config.php')) {
+    include_once(__DIR__ . '/config.php');
+} elseif (file_exists(__DIR__ . '/../config.php')) {
+    include_once(__DIR__ . '/../config.php');
+} elseif (file_exists(__DIR__ . '/../../config.php')) {
+    include_once(__DIR__ . '/../../config.php');
+} elseif (file_exists(__DIR__ . '/../../../config.php')) {
+    include_once(__DIR__ . '/../../../config.php');
+}
 
 												
 												//$slct = mysqli_fetch_assoc($r);

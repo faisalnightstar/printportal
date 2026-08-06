@@ -86,8 +86,8 @@
 						    	<?php if($b['payment_status']==1){ ?>
 								<td align="center" valign="middle"> <a  class="btn btn-success" id="print" style=" padding-left:15px;"   href="dlservice/dlnew.php?id=<?php echo $b['id']?>" target="_blank">New Print </a> </td>										<?php } else { ?> 
 								<td align="center" valign="middle">	
-								<form action="dlpay/index.php?id=<?php echo $b['id'];?>&amount=<?php echo $amt['amount'];?>" method="post" enctype="multipart/form-data" >
-									<input type="submit" class="btn btn-warning" value="PAY">
+								<form action="findwallet.php" method="post" enctype="multipart/form-data" >
+									<input type="submit" class="btn btn-warning" value="PAY VIA WALLET / QR">
 									</form>
 										<?php } ?></td>
 										

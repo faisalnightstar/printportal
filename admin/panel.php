@@ -1,499 +1,259 @@
-
 <?php include('userHeader.php'); ?>  
 <?php
-if($fetch['findwallet'] < 100){?>
+if ($fetch['findwallet'] < 100) { ?>
     <script>
-      alert("Dear User Your  Wallet Recharge Now to use it");
+      alert("Dear User, please recharge your wallet to continue accessing all services.");
       window.location.href = "../admin/recharge.php";
     </script>
-<?php  } ?>
-</html>
-<div class="main-content">
-<section class="section">
-<div class="section-header">
-<h1> <marquee behavior="alternate" > <b> Print Portal आपना अकाउंट रिचार्ज  करे रिचार्ज के बिना ईद ऐक् ||</a>  चेतावनी: ये पोर्टल सिर्फ प्रिंट करने की सुविधा प्रदान करता है,आपना अकाउंट रिचार्ज  करे रिचार्ज के बिना ईद ऐक् कुछ गलत करने पर आप खुद जिम्मेदार होंगे |</b> </marquee></h1> 
-</div>
+<?php } ?>
 
-                                                        <div style="background: rgba(31, 10, 106, 0.8) !important;" 
-                                                        <div class="row dgnform" style="margin-left: 12px;    padding-left: 12px; 
-                                                              padding-top: 12px;
-                                                              border-radius: 25px;display: grey;
-                                                              box-shadow: 1px 4px 2px 3px;">
-                                                        </div>
-                                                        <div class="card">
-                                                        <div class="stat-widget-two">
-                                                           <div class="stat-content">
-                                                                <marquee behavior="alternate" class="btn btn-white" style="background-color:light;">
-                                                                <a href="https://pmny.in/YIuosJVge4qI" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>CSC Approval</B></a>
-                                                                <a href="https://forms.gle/UC1Yz8et9oYimFqcA" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>CSC Operator ID ₹499/-</B></a>
-                                                                <a href="http://www.cscentrepreneur.in/add_vle" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>TEC Certificate</B></a>
-                                                                <a href="https://pmny.in/1IvmRoJoMnHi" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>RAP Certificate</B></a>
-                                                                <a href="https://pmny.in/aI7kkOZAssqS" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>INS Certificate</B></a>
-                                                                <a href="https://iibf.esdsconnect.com/nonmem/" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>IIBF BC/BF Certificate</B></a></marquee>
-                                                                <a href="https://forms.gle/BCyPRRjy5sQuz8fy7" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>GST Apply </B> </a> 
-                                                                <a href="https://pmny.in/8IQa4aSEakpo" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>GST Filling </B> </a> 
-                                                                <a href="https://myaadhaar.uidai.gov.in/" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>Aadhar Login</B></a>
-                                                                <a href="https://pmkisan.gov.in/" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>PM-Kisan</B></a>
-                                                                <a href="https://jrfry.jharkhand.gov.in/en/" class="btn btn-danger" target="_blank"style="background-color:#50329f;"><B>झारखंड राज्य फसल राहत</B></a>
-                                                                                                                              
-                                                                <button class="btn btn-outline-dark dropdown-toggle  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i> <B>Police Verification </B></button>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                                <a class="dropdown-item active" href="https://serviceonline.bihar.gov.in/renderApplicationForm.do?serviceId=12050006&UUID=c747c6e0-f255-4528-9ad9-066789b1d832&directService=true&tempId=4236&grievDefined=0&serviceLinkRequired=No&userLoggedIn=N&source=CTZN&OWASP_CSRFTOKEN=PXCO-8IKL-A012-SPZR-6GLX-LPSJ-Z979-3SVK" target="_blank">Character Certificate (Bihar)</a> 
-                                                                <a class="dropdown-item" href="https://citizen.jhpolice.gov.in/citizen/login.htm?lang=hi_IN&stov=PJ4Z-KH3U-QE10-M3JJ-NRHX-7TZF-BF4V-IEPP" target="_blank">Character Certificate (UP)</a>
-                                                                <a class="dropdown-item" href="https://www.digitalgujarat.gov.in/" target="_blank">Character Certificate (Gujarat)</a>
-                                                        </div>
-                                                                  <li class="btn btn-outline-dark dropdown-toggle"> <a href="" type="button" class="dropdownMenuButton" data-toggle="dropdown"> <span>जाति निवास आय  </span></a>
-                                                                  <ul class="dropdown-menu">
-                                                                  <li> <a class="nav-link" href="https://serviceonline.bihar.gov.in/" target="_blank"> <i class="fas fa-search"></i>&nbsp;&nbsp; जाति निवास आय (Bihar)</a> </li>
-                                                                  <li> <a class="nav-link" href="https://citizen.jhpolice.gov.in/citizen/login.htm?lang=hi_IN&stov=PJ4Z-KH3U-QE10-M3JJ-NRHX-7TZF-BF4V-IEPP" target="_blank"> <i class="fas fa-search"></i>&nbsp;&nbsp; जाति निवास आय (UP)</a> </li>
-                                                                  <li> <a class="nav-link" href="https://www.digitalgujarat.gov.in/" target="_blank"> <i class="fas fa-search"></i>&nbsp;&nbsp; जाति निवास आय (Gujarat)</a> </li>
-                                                                  <li> <a class="nav-link" href="https://castcertificatewb.gov.in/"> <i class="fas fa-search"></i>&nbsp;&nbsp; जाति निवास आय (West Bengal)</a> </li>
-                                                                  </ul>
-                                                                 </li>   
-                                                                 </div>
-                                                        ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                                                        
-                                                        
-                                                        </div>
-                                                        </div>
- <div class="row"><?php 
-                        $q = "";
-                        $q = "SELECT * FROM tbluser where  userid='".$_SESSION['userid']."'";
-                        $r = mysqli_query($connection,$q);
-                        $rw = mysqli_fetch_assoc($r);
-                        $rw['fullname'];
-                    ?>
- 
-<div class="col-lg-3 col-md-6 col-sm-6 col-12">
-<div class="card card-statistic-1">
-<div class="card-icon sidebar-style-3 bg-black">
-     <i class="fas fa-rupee-sign" style="color:white;font-size: 90px;"></i> </div>
-<div class="card-wrap">
-<div class="card-header">
-<h4>Total Blance</h4>
-</div>
-<div class="card-body"><?php 
-                                            if($fetch['ustatus'] == 1)
-                                            {
-                                                echo 'Unlimited';
-                                            }
-                                            else 
-                                            {
-                                                echo $rw['findwallet'];
-                                            }
-                                            ?></div>
-</div>
-</div>
+<!-- Workspace Container -->
+<div class="space-y-6">
 
-</div>
-<!--- <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-<div class="card card-statistic-1">
-<div class="card-icon sidebar-style-3 bg-black">
-     <i class="fas fa-rupee-sign" style="color:white;font-size: 90px;"></i> </div>
-<div class="card-wrap">
-<div class="card-header">
-<h4>Find Wallet Balance</h4>
-</div>
-<div class="card-body"><?php 
-                                            if($fetch['ustatus'] == 1)
-                                            {
-                                                echo 'Unlimited';
-                                            }
-                                            else 
-                                            {
-                                                echo $rw['findwallet'];
-                                            }
-                                            ?></div>
-</div>
-</div>
-</div> --->
-        <?php if($_SESSION['usertype']=="ADMIN"){ ?>
-							 
-							 <div class="col-md-3 col-sm-6 col-xs-12">
+    <!-- Announcement Alert Banner -->
+    <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-md shadow-blue-500/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white flex-shrink-0">
+                <i data-lucide="bell" class="w-5 h-5"></i>
+            </div>
+            <div>
+                <h3 class="font-bold text-sm">Welcome back, <?php echo htmlspecialchars($rw['fullname']); ?>!</h3>
+                <p class="text-xs text-blue-100 mt-0.5">Automated UPI QR Recharge is active. Instantly top up your balance with 0% extra fees.</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="findwallet.php" class="px-4 py-2 bg-white text-blue-600 hover:bg-blue-50 font-semibold text-xs rounded-xl shadow-xs transition-colors whitespace-nowrap">
+                Top-Up Wallet
+            </a>
+            <a href="recharge.php" class="px-4 py-2 bg-blue-700/60 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl transition-colors whitespace-nowrap">
+                View Plans
+            </a>
+        </div>
+    </div>
+
+    <!-- Quick Services Ribbon -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i> Government & Partner Services
+            </h4>
+            <span class="text-[10px] bg-slate-100 text-slate-600 font-semibold px-2 py-0.5 rounded-full">External Portals</span>
+        </div>
+        <div class="flex flex-wrap gap-2">
+            <a href="https://pmny.in/YIuosJVge4qI" target="_blank" class="px-3 py-1.5 bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-700 font-medium text-xs rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-blue-600"></i> CSC Approval
+            </a>
+            <a href="https://forms.gle/UC1Yz8et9oYimFqcA" target="_blank" class="px-3 py-1.5 bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-700 font-medium text-xs rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5">
+                <i data-lucide="user-check" class="w-3.5 h-3.5 text-indigo-600"></i> CSC Operator ID (₹499)
+            </a>
+            <a href="http://www.cscentrepreneur.in/add_vle" target="_blank" class="px-3 py-1.5 bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-700 font-medium text-xs rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-amber-600"></i> TEC Certificate
+            </a>
+            <a href="https://myaadhaar.uidai.gov.in/" target="_blank" class="px-3 py-1.5 bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-700 font-medium text-xs rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600"></i> Aadhaar Login
+            </a>
+            <a href="https://pmkisan.gov.in/" target="_blank" class="px-3 py-1.5 bg-slate-100 hover:bg-blue-50 text-slate-700 hover:text-blue-700 font-medium text-xs rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5">
+                <i data-lucide="sprout" class="w-3.5 h-3.5 text-green-600"></i> PM-Kisan Portal
+            </a>
+        </div>
+    </div>
+
+    <!-- KPI Metric Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
-                  		
-						  <div class="card gradient-pomegranate">
-      <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-              <?php 
-                                                $q = "";
-                                                 $q = "SELECT count(*) as cnt FROM tbluser where usertype='MASTER ADMIN'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>  
-                                            								</h3>
-              <span>Total Master Admin</span>
+        <!-- Total Balance KPI Card -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Balance</span>
+                <div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                    <i data-lucide="indian-rupee" class="w-5 h-5"></i>
+                </div>
             </div>
-            <div class="media-right white text-right">
+            <div class="mt-4">
+                <h2 class="text-2xl font-bold text-slate-900">
+                    <?php echo ($fetch['ustatus'] == 1) ? 'Unlimited' : '₹' . number_format((float)$rw['findwallet'], 2); ?>
+                </h2>
+                <p class="text-xs text-emerald-600 font-medium mt-1 flex items-center gap-1">
+                    <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> Active Wallet Status
+                </p>
             </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-          
         </div>
 
+        <!-- Account Level / Role Card -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Account Type</span>
+                <div class="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                    <i data-lucide="shield" class="w-5 h-5"></i>
+                </div>
+            </div>
+            <div class="mt-4">
+                <h2 class="text-2xl font-bold text-slate-900 uppercase">
+                    <?php echo htmlspecialchars($fetch['usertype']); ?>
+                </h2>
+                <p class="text-xs text-blue-600 font-medium mt-1 flex items-center gap-1">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Verified Access Level
+                </p>
+            </div>
+        </div>
 
-<div class="col-md-3 col-sm-6 col-xs-12">
-      
-						  <div class="card gradient-ibiza-sunset">
-      <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-               <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='SUPER DISTRIBUTER'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-                                       						</h3>
-              <span>Total Super Distributer</span>
+        <?php if ($_SESSION['usertype'] == "ADMIN") { ?>
+        <!-- Admin Statistics: Master Admins -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Master Admins</span>
+                <div class="w-9 h-9 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center">
+                    <i data-lucide="user-check" class="w-5 h-5"></i>
+                </div>
             </div>
-            <div class="media-right white text-right">
+            <div class="mt-4">
+                <?php 
+                    $rr = mysqli_query($connection, "SELECT count(*) as cnt FROM tbluser where usertype='MASTER ADMIN'");
+                    $rorw = mysqli_fetch_assoc($rr);
+                ?>
+                <h2 class="text-2xl font-bold text-slate-900"><?php echo $rorw['cnt']; ?></h2>
+                <p class="text-xs text-purple-600 font-medium mt-1">Total System Administrators</p>
             </div>
-          </div>
         </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
+
+        <!-- Admin Statistics: Total Retailers -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Retailers</span>
+                <div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                </div>
+            </div>
+            <div class="mt-4">
+                <?php 
+                    $rr2 = mysqli_query($connection, "SELECT count(*) as cnt FROM tbluser where usertype='RETAILER'");
+                    $rorw2 = mysqli_fetch_assoc($rr2);
+                ?>
+                <h2 class="text-2xl font-bold text-slate-900"><?php echo $rorw2['cnt']; ?></h2>
+                <p class="text-xs text-amber-600 font-medium mt-1">Active Retail Accounts</p>
+            </div>
         </div>
-      </div>
+        <?php } else { ?>
+
+        <!-- Service Status Card -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Service Status</span>
+                <div class="w-9 h-9 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center">
+                    <i data-lucide="activity" class="w-5 h-5"></i>
+                </div>
+            </div>
+            <div class="mt-4">
+                <h2 class="text-2xl font-bold text-emerald-600">Online</h2>
+                <p class="text-xs text-slate-500 font-medium mt-1">All Print API Endpoints Operational</p>
+            </div>
+        </div>
+
+        <!-- Quick Top-Up Action -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-5 shadow-md flex flex-col justify-between">
+            <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Quick Recharge</span>
+                <p class="text-sm font-semibold mt-1">Scan UPI QR Code for instant wallet credit</p>
+            </div>
+            <button onclick="openUpiRechargeModal(100)" class="mt-4 w-full py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs rounded-xl shadow-sm transition-colors flex items-center justify-center gap-1.5">
+                <i data-lucide="qrcode" class="w-4 h-4"></i> Open QR Scanner
+            </button>
+        </div>
+        <?php } ?>
+
     </div>
-          
-          <!-- /.info-box -->
-        </div>	
+
+    <!-- Main Service Hub Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <div class="col-md-3 col-sm-6 col-xs-12">
-           <div class="card gradient-ibiza-sunset">
-      <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-              <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='DISTRIBUTER'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-                                                 </h3>
-              <span>Total Distributer</span>
-            </div>
-            <div class="media-right white text-right">                                                                                                       
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-        </div>	
-						
-							
-				 <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="card gradient-pomegranate">
-      <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0"> <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='RETAILER'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-             
-             
-               </h3>
-              <span>Total Retailer</span>
-            </div>
-            <div class="media-right white text-right">
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-          
-        </div>
-		
-		 <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="card gradient-green-tea">
-     <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-                  
-                 <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-            
-					    </h3>
-              <span>Total User</span>
-            </div>
-            <div class="media-right white text-right">
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-          <!-- /.info-box -->
-        </div>
-						
-                          <?php } elseif ($_SESSION['usertype']=="MASTER ADMIN") { ?>
-                            
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-           <div class="card gradient-pomegranate">
-      <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-                  
-                  
-<?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='SUPER DISTRIBUTER' and refrenceid='".$_SESSION['userid']."'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-              </h3>
-              <span>Total Super Distributer</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-graph font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-        </div>	
-        
-        <div class="col-md-3 col-sm-6 col-xs-12">
-             <div class="card gradient-blackberry">
-      <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-                  
-            <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='DISTRIBUTER' and refrenceid='".$_SESSION['userid']."'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-              </h3>
-              <span>Total Distributer</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-graph font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-        </div>	
-						
-							
-				 <div class="col-md-3 col-sm-8 col-xs-12">
-          <div class="card gradient-pomegranate">
-      <div class="card-content" style="height: 120px;">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-                  
-               <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='RETAILER' and refrenceid='".$_SESSION['userid']."'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-              </h3>
-              <span>Total Retailer</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-graph font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-        </div>
-                            
-                            
-                                
-                            <?php } elseif ($_SESSION['usertype']=="SUPER DISTRIBUTER"){ ?>
-                            
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-           <div class="card gradient-blackberry">
-      <div class="card-content">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-                  
-            <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='DISTRIBUTER' and refrenceid='".$_SESSION['userid']."'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-           </h3>
-              <span>Total Distributer</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-graph font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-        </div>	
-						
-							
-				 <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="card gradient-pomegranate">
-      <div class="card-content">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-                  
-              <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='RETAILER' and refrenceid='".$_SESSION['userid']."'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
+        <!-- Popular Services Section -->
+        <div class="lg:col-span-2 bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
+                <i data-lucide="grid" class="w-5 h-5 text-blue-600"></i> Core Document Services
             </h3>
-              <span>Total Retailer</span>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="pan_find_instant.php" class="p-4 rounded-xl border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all group bg-slate-50/50">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <i data-lucide="search" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors">Instant PAN Find</h4>
+                            <p class="text-xs text-slate-500">Find PAN number via Aadhaar</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="aadharfindlist.php" class="p-4 rounded-xl border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all group bg-slate-50/50">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors">Aadhaar PDF Print</h4>
+                            <p class="text-xs text-slate-500">Duplicate Aadhaar card generator</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="voterlist.php" class="p-4 rounded-xl border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all group bg-slate-50/50">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <i data-lucide="check-square" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors">Voter Advance Print</h4>
+                            <p class="text-xs text-slate-500">Official voter EPIC card search</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="dlmlist.php" class="p-4 rounded-xl border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all group bg-slate-50/50">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center group-hover:scale-105 transition-transform">
+                            <i data-lucide="car" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors">Driving License Print</h4>
+                            <p class="text-xs text-slate-500">DL card verification & HD print</p>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="media-right white text-right">
-              <i class="icon-graph font-large-1"></i>
+        </div>
+
+        <!-- Support & Quick Tools Sidebar Widget -->
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+            <div>
+                <h3 class="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+                    <i data-lucide="help-circle" class="w-5 h-5 text-indigo-600"></i> Need Assistance?
+                </h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Our support team is available 24/7. Watch training video tutorials or reach out via WhatsApp for instant technical help.
+                </p>
+
+                <div class="mt-4 space-y-2">
+                    <a href="https://www.youtube.com/@mybestprint1439" target="_blank" class="w-full py-2 px-3 bg-red-50 hover:bg-red-100 text-red-700 font-semibold text-xs rounded-xl border border-red-200 flex items-center justify-center gap-2 transition-colors">
+                        <i data-lucide="youtube" class="w-4 h-4 text-red-600"></i> Watch YouTube Tutorials
+                    </a>
+                    <a href="https://chat.whatsapp.com/HxizVuAJugJHCcsUXb29BU" target="_blank" class="w-full py-2 px-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold text-xs rounded-xl border border-emerald-200 flex items-center justify-center gap-2 transition-colors">
+                        <i data-lucide="message-square" class="w-4 h-4 text-emerald-600"></i> Join WhatsApp Support
+                    </a>
+                </div>
             </div>
-          </div>
+
+            <div class="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
+                <span>System Version v2.5</span>
+                <span class="flex items-center gap-1 text-emerald-600 font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Systems Active
+                </span>
+            </div>
         </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
+
     </div>
-        </div>
-        
-                                
-                            <?php } elseif ($_SESSION['usertype']=="DISTRIBUTER"){ ?>
-                            
-                            <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="card gradient-pomegranate">
-      <div class="card-content">
-        <div class="card-body pt-2 pb-0">
-          <div class="media">
-            <div class="media-body white text-left">
-              <h3 class="font-large-1 mb-0">
-                  
-              <?php 
-                                                $q = "";
-                                                $q = "SELECT count(*) as cnt FROM tbluser where usertype='RETAILER' and refrenceid='".$_SESSION['userid']."'";
-                                                $rr = mysqli_query($connection,$q);
-                                                $rorw = mysqli_fetch_assoc($rr);
-                                                $rorw['cnt'];
-                                            ?>
-                                            <?php echo $rorw['cnt']; ?>
-              </h3>
-              <span>Total Retailer</span>
-            </div>
-            <div class="media-right white text-right">
-              <i class="icon-graph font-large-1"></i>
-            </div>
-          </div>
-        </div>
-        <div class="height-75 WidgetlineChartshadow mb-2">
-        </div>
-      </div>
-    </div>
-          <!-- /.info-box -->
-   
 
-                                
-                            <?php } ?>
-                            
-                            
 </div>
-</div>
-                         </div>
-        
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-<style>
-	.btn-outline-amber {
-    border-color: #FFC107;
-    background-color: transparent;
-    color: #FFC107;
-}
-	</style>
 
-<!-- General JS Scripts -->
-<script src="assets/bundles/lib.vendor.bundle.js"></script>
-<script src="js/CodiePie.js"></script>
-
-<!-- JS Libraies -->
-<script src="assets/modules/jquery.sparkline.min.js"></script>
-<script src="assets/modules/chart.min.js"></script>
-<script src="assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-<script src="assets/modules/summernote/summernote-bs4.js"></script>
-<script src="assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
-
-<!-- Page Specific JS File -->
-<script src="js/page/panel.js"></script>
-
-<!-- Template JS File -->
-<script src="js/scripts.js"></script>
-<script src="js/custom.js"></script>
-</body>
-
-</html>
+<?php include('upi_recharge_modal.php'); ?>
+<?php include('userFooter.php'); ?>
