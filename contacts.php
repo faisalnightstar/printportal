@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO & Geo-Targeting -->
-    <title>Contact Us | Print Portals</title>
-    <meta name="description" content="Get in touch with Print Portals. We are here to help CSC VLEs and retailers with fast and secure PVC card printing services in India.">
-    <meta name="author" content="Print Portals">
+    <title>Contact Us | New Print Portal</title>
+    <meta name="description" content="Get in touch with New Print Portal. We are here to help CSC VLEs and retailers with fast and secure PVC card printing services in India.">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nprintportal.in/contacts.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nprintportal.in/contacts.php">
-    <meta property="og:title" content="Contact Us | Print Portals">
-    <meta property="og:description" content="Need help with Aadhaar, Voter ID, or PAN card printing? Contact the Print Portals support team today.">
+    <meta property="og:title" content="Contact Us | New Print Portal">
+    <meta property="og:description" content="Need help with Aadhaar, Voter ID, or PAN card printing? Contact the New Print Portal support team today.">
     
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,11 +49,11 @@
     {
       "@context": "https://schema.org",
       "@type": "ContactPage",
-      "name": "Contact Print Portals",
+      "name": "Contact New Print Portal",
       "url": "https://nprintportal.in/contacts.php",
       "mainEntity": {
         "@type": "Organization",
-        "name": "Print Portals",
+        "name": "New Print Portal",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+91-9897969594",
@@ -231,7 +231,7 @@
             
             <div class="flex flex-col md:flex-row justify-between items-center mt-8">
                 <div class="text-center md:text-left text-gray-500 text-sm">
-                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> New Print Portal. All Rights Reserved.</p>
                     <p class="mt-2 text-xs max-w-xl">This platform operates independently to provide formatting and printing software tools for retailers. Use responsibly and in accordance with local regulations.</p>
                 </div>
                 

@@ -62,19 +62,19 @@ if (file_exists("config.php")) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- SEO & Geo-Targeting -->
-    <title>Login | Print Portals</title>
+    <title>Login | New Print Portal</title>
     <meta name="description"
-        content="Secure login to Print Portals. Access your dashboard to instantly format and print Aadhaar, Voter ID, PAN, and Ayushman cards.">
-    <meta name="author" content="Print Portals">
+        content="Secure login to New Print Portal. Access your dashboard to instantly format and print Aadhaar, Voter ID, PAN, and Ayushman cards.">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nprintportal.in/login.php" />
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nprintportal.in/login.php">
-    <meta property="og:title" content="Login | Print Portals">
+    <meta property="og:title" content="Login | New Print Portal">
     <meta property="og:description"
-        content="Access your Print Portals retailer dashboard. Fast and secure document printing services.">
+        content="Access your New Print Portal retailer dashboard. Fast and secure document printing services.">
 
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -313,7 +313,7 @@ if (file_exists("config.php")) {
                 <div class="text-center md:text-left text-gray-500 text-sm">
                     <p>&copy; <script>
                         document.write(new Date().getFullYear())
-                        </script> Print Portals. All Rights Reserved.</p>
+                        </script> New Print Portal. All Rights Reserved.</p>
                     <p class="mt-2 text-xs max-w-xl">This platform operates independently to provide formatting and
                         printing software tools for retailers. Use responsibly and in accordance with local regulations.
                     </p>

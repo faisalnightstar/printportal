@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO & Geo-Targeting -->
-    <title>Terms & Conditions | Print Portals</title>
-    <meta name="description" content="Read the Terms and Conditions for using Print Portals. Understand the rules, restrictions, and legal agreements for using our digital document formatting services in India.">
-    <meta name="author" content="Print Portals">
+    <title>Terms & Conditions | New Print Portal</title>
+    <meta name="description" content="Read the Terms and Conditions for using New Print Portal. Understand the rules, restrictions, and legal agreements for using our digital document formatting services in India.">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nprintportal.in/Terms.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nprintportal.in/Terms.php">
-    <meta property="og:title" content="Terms & Conditions | Print Portals">
-    <meta property="og:description" content="Read the Terms and Conditions for using Print Portals. Understand the rules for using our digital document formatting services.">
+    <meta property="og:title" content="Terms & Conditions | New Print Portal">
+    <meta property="og:description" content="Read the Terms and Conditions for using New Print Portal. Understand the rules for using our digital document formatting services.">
     
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,10 +108,10 @@
             
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
                 <p class="text-gray-600 mb-8 leading-relaxed font-medium">
-                    Welcome to Print Portals! These terms and conditions outline the rules and regulations for the use of Print Portals's Website, located at <a href="https://nprintportal.in" class="text-brand-light hover:underline">https://nprintportal.in</a>.
+                    Welcome to New Print Portal! These terms and conditions outline the rules and regulations for the use of New Print Portal's Website, located at <a href="https://nprintportal.in" class="text-brand-light hover:underline">https://nprintportal.in</a>.
                 </p>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    By accessing this website we assume you accept these terms and conditions. Do not continue to use Print Portals if you do not agree to take all of the terms and conditions stated on this page.
+                    By accessing this website we assume you accept these terms and conditions. Do not continue to use New Print Portal if you do not agree to take all of the terms and conditions stated on this page.
                 </p>
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">1. Terminology</h2>
@@ -145,7 +145,7 @@
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">5. Limitation of Liability</h2>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Print Portals and its administrators shall not be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses resulting from the use of or inability to use the service.
+                    New Print Portal and its administrators shall not be liable for any direct, indirect, incidental, special, consequential or exemplary damages, including but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses resulting from the use of or inability to use the service.
                 </p>
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">6. Governing Law</h2>
@@ -176,7 +176,7 @@
             
             <div class="flex flex-col md:flex-row justify-between items-center mt-8">
                 <div class="text-center md:text-left text-gray-500 text-sm">
-                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> New Print Portal. All Rights Reserved.</p>
                     <p class="mt-2 text-xs max-w-xl">This platform operates independently to provide formatting and printing software tools for retailers. Use responsibly and in accordance with local regulations.</p>
                 </div>
                 

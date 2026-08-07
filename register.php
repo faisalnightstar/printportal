@@ -68,9 +68,9 @@ if (file_exists("config.php")) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO & Geo-Targeting -->
-    <title>Create Account | Print Portals</title>
-    <meta name="description" content="Register for a free Print Portals retailer account. Gain instant access to our secure PVC card formatting tools for Aadhaar, Voter ID, and PAN.">
-    <meta name="author" content="Print Portals">
+    <title>Create Account | New Print Portal</title>
+    <meta name="description" content="Register for a free New Print Portal retailer account. Gain instant access to our secure PVC card formatting tools for Aadhaar, Voter ID, and PAN.">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nprintportal.in/register.php" />
     
@@ -154,7 +154,7 @@ if (file_exists("config.php")) {
                     Create Your Account
                 </h2>
                 <p class="mt-2 text-sm text-gray-600">
-                    Join thousands of retailers using Print Portals today.
+                    Join thousands of retailers using New Print Portal today.
                 </p>
             </div>
 
@@ -301,7 +301,7 @@ if (file_exists("config.php")) {
             
             <div class="flex flex-col md:flex-row justify-between items-center mt-8">
                 <div class="text-center md:text-left text-gray-500 text-sm">
-                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> New Print Portal. All Rights Reserved.</p>
                     <p class="mt-2 text-xs max-w-xl">This platform operates independently to provide formatting and printing software tools for retailers. Use responsibly and in accordance with local regulations.</p>
                 </div>
                 

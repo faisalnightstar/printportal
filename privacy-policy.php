@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO & Geo-Targeting -->
-    <title>Privacy Policy | Print Portals</title>
-    <meta name="description" content="Privacy Policy for Print Portals. Learn how we collect, use, and protect your personal information while you use our digital document formatting services.">
-    <meta name="author" content="Print Portals">
+    <title>Privacy Policy | New Print Portal</title>
+    <meta name="description" content="Privacy Policy for New Print Portal. Learn how we collect, use, and protect your personal information while you use our digital document formatting services.">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nprintportal.in/privacy-policy.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nprintportal.in/privacy-policy.php">
-    <meta property="og:title" content="Privacy Policy | Print Portals">
-    <meta property="og:description" content="Privacy Policy for Print Portals. Learn how we collect, use, and protect your data.">
+    <meta property="og:title" content="Privacy Policy | New Print Portal">
+    <meta property="og:description" content="Privacy Policy for New Print Portal. Learn how we collect, use, and protect your data.">
     
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -108,7 +108,7 @@
             
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12">
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    At <strong>Print Portals</strong>, accessible from <a href="https://nprintportal.in" class="text-brand-light hover:underline">https://nprintportal.in</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Print Portals and how we use it.
+                    At <strong>New Print Portal</strong>, accessible from <a href="https://nprintportal.in" class="text-brand-light hover:underline">https://nprintportal.in</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by New Print Portal and how we use it.
                 </p>
                 
                 <p class="text-gray-600 mb-6 leading-relaxed">
@@ -116,7 +116,7 @@
                 </p>
                 
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Print Portals. This policy is not applicable to any information collected offline or via channels other than this website.
+                    This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in New Print Portal. This policy is not applicable to any information collected offline or via channels other than this website.
                 </p>
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">Consent</h2>
@@ -149,7 +149,7 @@
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">Log Files</h2>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Print Portals follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+                    New Print Portal follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
                 </p>
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">Google DoubleClick DART Cookie</h2>
@@ -169,18 +169,18 @@
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">Advertising Partners Privacy Policies</h2>
                 <p class="text-gray-600 mb-4 leading-relaxed">
-                    You may consult this list to find the Privacy Policy for each of the advertising partners of Print Portals.
+                    You may consult this list to find the Privacy Policy for each of the advertising partners of New Print Portal.
                 </p>
                 <p class="text-gray-600 mb-4 leading-relaxed">
-                    Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on Print Portals, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
+                    Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on New Print Portal, which are sent directly to users' browser. They automatically receive your IP address when this occurs. These technologies are used to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on websites that you visit.
                 </p>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    Note that Print Portals has no access to or control over these cookies that are used by third-party advertisers.
+                    Note that New Print Portal has no access to or control over these cookies that are used by third-party advertisers.
                 </p>
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">Third Party Privacy Policies</h2>
                 <p class="text-gray-600 mb-4 leading-relaxed">
-                    Print Portals's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. 
+                    New Print Portal's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. 
                 </p>
                 <p class="text-gray-600 mb-6 leading-relaxed">
                     You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
@@ -216,7 +216,7 @@
                     Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
                 </p>
                 <p class="text-gray-600 mb-0 leading-relaxed">
-                    Print Portals does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
+                    New Print Portal does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
                 </p>
             </div>
 
@@ -242,7 +242,7 @@
             
             <div class="flex flex-col md:flex-row justify-between items-center mt-8">
                 <div class="text-center md:text-left text-gray-500 text-sm">
-                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> New Print Portal. All Rights Reserved.</p>
                     <p class="mt-2 text-xs max-w-xl">This platform operates independently to provide formatting and printing software tools for retailers. Use responsibly and in accordance with local regulations.</p>
                 </div>
                 

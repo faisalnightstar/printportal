@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO & Geo-Targeting -->
-    <title>About Us | Print Portals</title>
-    <meta name="description" content="Learn about Print Portals, India's leading digital platform for fast and secure document formatting and PVC printing for CSC VLEs and retailers.">
-    <meta name="author" content="Print Portals">
+    <title>About Us | New Print Portal</title>
+    <meta name="description" content="Learn about New Print Portal, India's leading digital platform for fast and secure document formatting and PVC printing for CSC VLEs and retailers.">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://nprintportal.in/abouts.php" />
     <meta name="google-site-verification" content="hcl-Jqwp1MOp5NPH7w34dDulCYYH3haxX4MmAacpdDs" />
@@ -16,8 +16,8 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nprintportal.in/abouts.php">
-    <meta property="og:title" content="About Us | Print Portals">
-    <meta property="og:description" content="Discover how Print Portals empowers CSC VLEs with instant PVC printing solutions for Aadhaar, Voter ID, PAN, and Ayushman cards.">
+    <meta property="og:title" content="About Us | New Print Portal">
+    <meta property="og:description" content="Discover how New Print Portal empowers CSC VLEs with instant PVC printing solutions for Aadhaar, Voter ID, PAN, and Ayushman cards.">
     
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,7 +124,7 @@
                     </p>
                     
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Print Portals allows you to effortlessly format and print Aadhaar Cards, Ayushman Cards, PAN Cards, Advance Voter Cards, RTPS Services, Driving Licenses, and many more essential documents. We pride ourselves on delivering lightning-fast, highly secure, and incredibly easy-to-use services to help grow your business.
+                        New Print Portal allows you to effortlessly format and print Aadhaar Cards, Ayushman Cards, PAN Cards, Advance Voter Cards, RTPS Services, Driving Licenses, and many more essential documents. We pride ourselves on delivering lightning-fast, highly secure, and incredibly easy-to-use services to help grow your business.
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4">
@@ -195,7 +195,7 @@
             
             <div class="flex flex-col md:flex-row justify-between items-center mt-8">
                 <div class="text-center md:text-left text-gray-500 text-sm">
-                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> New Print Portal. All Rights Reserved.</p>
                     <p class="mt-2 text-xs max-w-xl">This platform operates independently to provide formatting and printing software tools for retailers. Use responsibly and in accordance with local regulations.</p>
                 </div>
                 

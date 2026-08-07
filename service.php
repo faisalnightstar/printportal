@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO & Geo-Targeting -->
-    <title>Our Services | Print Portals</title>
+    <title>Our Services | New Print Portal</title>
     <meta name="description" content="Explore our premium document printing services. Instant PVC printing for Aadhaar, Voter ID, PAN, Ayushman, and Driving License for CSC VLEs.">
-    <meta name="author" content="Print Portals">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <link rel="canonical" href="https://nprintportal.in/service.php" />
     <meta name="google-site-verification" content="hcl-Jqwp1MOp5NPH7w34dDulCYYH3haxX4MmAacpdDs" />
@@ -16,7 +16,7 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nprintportal.in/service.php">
-    <meta property="og:title" content="Our Services | Print Portals">
+    <meta property="og:title" content="Our Services | New Print Portal">
     <meta property="og:description" content="Explore our premium document printing services. Instant PVC printing for Aadhaar, Voter ID, PAN, Ayushman, and Driving License.">
     
     <!-- Google Fonts Integration -->
@@ -186,7 +186,7 @@
                 </div>
             </div>
             <div class="mt-8 text-center text-gray-500 text-sm">
-                <p>&copy; <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.</p>
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> New Print Portal. All Rights Reserved.</p>
                 <p class="mt-2 text-xs">This platform operates independently to provide formatting and printing software tools for retailers. Use responsibly and in accordance with local regulations.</p>
             </div>
         </div>

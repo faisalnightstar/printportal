@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <!-- SEO & Geo-Targeting -->
-    <title>Cancellation & Refund Policy | Print Portals</title>
-    <meta name="description" content="Read the Cancellation and Refund Policy for Print Portals. Understand our terms regarding digital software purchases and account top-ups.">
-    <meta name="author" content="Print Portals">
+    <title>Cancellation & Refund Policy | New Print Portal</title>
+    <meta name="description" content="Read the Cancellation and Refund Policy for New Print Portal. Understand our terms regarding digital software purchases and account top-ups.">
+    <meta name="author" content="New Print Portal">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://nprintportal.in/refund-policy.php" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nprintportal.in/refund-policy.php">
-    <meta property="og:title" content="Cancellation & Refund Policy | Print Portals">
-    <meta property="og:description" content="Read the Cancellation and Refund Policy for Print Portals. Understand our terms regarding digital purchases.">
+    <meta property="og:title" content="Cancellation & Refund Policy | New Print Portal">
+    <meta property="og:description" content="Read the Cancellation and Refund Policy for New Print Portal. Understand our terms regarding digital purchases.">
     
     <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,10 +110,10 @@
                 
                 <h2 class="text-2xl font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">1. All Sales Are Final</h2>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    At <strong>Print Portals</strong>, we strive to provide the most reliable and efficient document formatting services. Because the nature of our digital media and software allows for instant access and utilization immediately after a purchase or wallet top-up has been made, there is no "trial" or "grace period." 
+                    At <strong>New Print Portal</strong>, we strive to provide the most reliable and efficient document formatting services. Because the nature of our digital media and software allows for instant access and utilization immediately after a purchase or wallet top-up has been made, there is no "trial" or "grace period." 
                 </p>
                 <p class="text-gray-600 mb-8 leading-relaxed font-medium text-gray-900 bg-red-50 p-4 rounded-lg border border-red-100">
-                    As such, all sales are final. Once you have purchased a service or added funds to your wallet, there is no way to "return" it, and refunds cannot be provided under normal circumstances. Exceptions are made solely at the discretion of the Print Portals administration team.
+                    As such, all sales are final. Once you have purchased a service or added funds to your wallet, there is no way to "return" it, and refunds cannot be provided under normal circumstances. Exceptions are made solely at the discretion of the New Print Portal administration team.
                 </p>
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">2. Support & Troubleshooting</h2>
@@ -126,7 +126,7 @@
 
                 <h2 class="text-2xl font-bold text-gray-900 mt-10 mb-4 border-b border-gray-100 pb-2">3. Policy Agreement</h2>
                 <p class="text-gray-600 mb-6 leading-relaxed">
-                    By registering an account and using the services provided by Print Portals, you acknowledge that you have read and agree to this Cancellation and Refund Policy.
+                    By registering an account and using the services provided by New Print Portal, you acknowledge that you have read and agree to this Cancellation and Refund Policy.
                 </p>
                 <p class="text-gray-600 mb-0 leading-relaxed">
                     For further details regarding the use of our platform, please thoroughly review our <a href="Terms.php" class="text-brand-light hover:underline font-medium">Terms & Conditions</a>.
@@ -155,7 +155,7 @@
             
             <div class="flex flex-col md:flex-row justify-between items-center mt-8">
                 <div class="text-center md:text-left text-gray-500 text-sm">
-                    <p>&copy; <script>document.write(new Date().getFullYear())</script> Print Portals. All Rights Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear())</script> New Print Portal. All Rights Reserved.</p>
                     <p class="mt-2 text-xs max-w-xl">This platform operates independently to provide formatting and printing software tools for retailers. Use responsibly and in accordance with local regulations.</p>
                 </div>
                 
